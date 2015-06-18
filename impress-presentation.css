@@ -1,0 +1,20 @@
+.h5p-impress-presentation .jmpress {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  -webkit-transform: translate3d(0,0,2px);
+  -moz-transform:    translate3d(0,0,2px);
+  -ms-transform:     translate3d(0,0,2px);
+  -o-transform:      translate3d(0,0,2px);
+  transform:         translate3d(0,0,2px);
+}
+
+.h5p-impress-presentation .h5p-standard-view {
+  width: 800px;
+}
+
+.h5p-impress-presentation .h5p-standard-view.h5p-center-view {
+  text-align: center;
+}

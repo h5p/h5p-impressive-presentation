@@ -1,0 +1,79 @@
+[
+  {
+    "name": "viewsGroup",
+    "type": "group",
+    "widget": "impressPresentationEditor",
+    "fields": [
+      {
+        "name": "views",
+        "type": "list",
+        "label": "Create views",
+        "description": "Here you can create views with different transitions and text.",
+        "entity": "option",
+        "field": {
+          "name": "viewInstance",
+          "type": "group",
+          "label": "View instance",
+          "fields": [
+            {
+              "name": "action",
+              "type": "library",
+              "options": [
+                "H5P.Text 1.0",
+                "H5P.MarkTheWords 1.2",
+                "H5P.Blanks 1.2",
+                "H5P.InteractiveVideo 1.6",
+                "H5P.CoursePresentation 1.5"
+              ],
+              "optional": true
+            },
+            {
+              "name": "centerText",
+              "type": "boolean",
+              "label": "center text",
+              "default": true,
+              "optional": true
+            },
+            {
+              "name": "xPosition",
+              "type": "number",
+              "label": "Absolute x position",
+              "default": 0
+            },
+            {
+              "name": "yPosition",
+              "type": "number",
+              "label": "Absolute y position",
+              "default": 0
+            },
+            {
+              "name": "zPosition",
+              "type": "number",
+              "label": "Absolute z position",
+              "description": "Negative values are further away from the camera and positive values are closer.",
+              "optional": true,
+              "default": 0
+            },
+            {
+              "name": "absoluteRotation",
+              "type": "number",
+              "label": "Absolute value rotation",
+              "description": "Absolute rotation relative to 0 rotation. Normal rotation is 0.",
+              "default": 0,
+              "optional": true
+            },
+            {
+              "name": "absoluteScale",
+              "type": "number",
+              "label": "Absolute scale value of view",
+              "description": "Will scale the view, normal scale is 1. Allows up to 3 decimals.",
+              "decimals": 3,
+              "default": "1.0",
+              "optional": true
+            }
+          ]
+        }
+      }
+    ]
+  }
+]
