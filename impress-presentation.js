@@ -29,9 +29,9 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
       },
       positioning: {
         centerText: true,
-        yPosition: 0,
-        xPosition: 0,
-        zPosition: 0,
+        y: 0,
+        x: 0,
+        z: 0,
         absoluteRotation: 0
       }
     };
@@ -151,12 +151,12 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
 
   ImpressPresentation.prototype.createViewHtml = function (viewInstance) {
     var self = this;
-    debugger;
+
     var id = viewInstance.idCounter;
     var centerText = viewInstance.params.positioning.centerText;
-    var yPos = viewInstance.params.positioning.yPosition;
-    var xPos = viewInstance.params.positioning.xPosition;
-    var zPos = viewInstance.params.positioning.zPosition;
+    var yPos = viewInstance.params.positioning.y;
+    var xPos = viewInstance.params.positioning.x;
+    var zPos = viewInstance.params.positioning.z;
     var rotation = viewInstance.params.positioning.absoluteRotation;
     var classString = STANDARD_VIEW_CLASS;
     if (centerText !== undefined && centerText) {

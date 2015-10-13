@@ -38,21 +38,21 @@
                   "optional": true
                 },
                 {
-                  "name": "xPosition",
+                  "name": "x",
                   "type": "number",
-                  "label": "Absolute x position",
+                  "label": "X position",
                   "default": 0
                 },
                 {
-                  "name": "yPosition",
+                  "name": "y",
                   "type": "number",
-                  "label": "Absolute y position",
+                  "label": "Y position",
                   "default": 0
                 },
                 {
-                  "name": "zPosition",
+                  "name": "z",
                   "type": "number",
-                  "label": "Absolute z position",
+                  "label": "Z position",
                   "description": "Negative values are further away from the camera and positive values are closer.",
                   "optional": true,
                   "default": 0
