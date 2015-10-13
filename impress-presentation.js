@@ -16,13 +16,13 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
    */
   function ImpressPresentation(params, contentId) {
     var self = this;
-    this.contentId = contentId;
+    self.contentId = contentId;
 
     EventDispatcher.call(this);
 
     console.log(params);
 
-    this.defaultStep = {
+    self.defaultStep = {
       action: {},
       backgroundGroup: {
         transparentBackground: true
@@ -36,29 +36,29 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
       }
     };
 
-    this.defaults = {
+    self.defaults = {
       viewsGroup: [
-        this.defaultStep
+        self.defaultStep
       ],
       viewPortWidth: 640,
       viewPortHeight: 360,
       keyZoomAmount: 10
     };
 
-    this.ID_PREFIX = 'h5p-impres-id-';
-    this.idCounter = 0;
-    this.editing = false;
+    self.ID_PREFIX = 'h5p-impres-id-';
+    self.idCounter = 0;
+    self.editing = false;
 
     // Set default behavior.
-    this.params = $.extend(true, this.defaults, params);
+    self.params = $.extend(true, self.defaults, params);
 
     // Keep track of view elements
-    this.viewElements = [];
+    self.viewElements = [];
 
     // Array containing all libraries.
-    this.content = [];
+    self.content = [];
 
-    this.on('resize', function () {
+    self.on('resize', function () {
       self.resize();
     });
   }
@@ -73,21 +73,22 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
    * @param {jQuery} $container The container which will be appended to.
    */
   ImpressPresentation.prototype.attach = function ($container) {
+    var self = this;
     $container.addClass('h5p-impress-presentation');
 
-    this.$inner = $('<div>', {
+    self.$inner = $('<div>', {
       'class': "h5p-impress-wrapper"
     }).appendTo($container);
 
     // Process views
     var $viewsContainer = $('<article class="jmpress" tabindex="0"></article>');
-    this.processViews(this.params.viewsGroup, $viewsContainer);
-    $viewsContainer.appendTo(this.$inner);
-    this.$jmpress = $('.jmpress', this.$inner);
+    self.processViews(self.params.viewsGroup, $viewsContainer);
+    $viewsContainer.appendTo(self.$inner);
+    self.$jmpress = $('.jmpress', self.$inner);
 
-    this.initJmpress();
-    this.initZoomFunctionality();
-    this.resize();
+    self.initJmpress();
+    self.initZoomFunctionality();
+    self.resize();
   };
 
   ImpressPresentation.prototype.processViews = function (viewsData, $wrapper) {
@@ -96,14 +97,14 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
     $wrapper.children().remove();
 
     var self = this;
-    this.content = [];
+    self.content = [];
 
     if (viewsData === undefined) {
       return $wrapper;
     }
 
     // Clear view elements before (re)populating it
-    this.viewElements = [];
+    self.viewElements = [];
 
     viewsData.forEach(function (viewInstance) {
       var viewObject = self.createViewObject(self.idCounter, viewInstance);
@@ -129,7 +130,7 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
       }).appendTo($viewHtml);
 
       var actionInstance = new H5P.newRunnable(viewInstance.action, self.contentId, $libraryContainer);
-      this.content.push(actionInstance);
+      self.content.push(actionInstance);
     }
   };
 
@@ -185,13 +186,14 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
    * Initializes jmpress, this needs to be run to get proper behaviour from the container.
    */
   ImpressPresentation.prototype.initJmpress = function (width, height) {
+    var self = this;
 
     if (!width) {
-      width = this.params.viewPortWidth;
+      width = self.params.viewPortWidth;
     }
 
     if (!height) {
-      height = this.params.viewPortHeight;
+      height = self.params.viewPortHeight;
     }
 
     var config = {
@@ -216,26 +218,27 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
       hash: { use: false}
     };
 
-    this.$jmpress.jmpress(config);
+    self.$jmpress.jmpress(config);
   };
 
   ImpressPresentation.prototype.resize = function () {
+    var self = this;
 
     // Fit viewport to available space
-    var containerWidth = this.$inner.width();
+    var containerWidth = self.$inner.width();
     var containerHeight = (containerWidth * 9) / 16;
-    this.$inner.height(containerHeight);
+    self.$inner.height(containerHeight);
 
     // Update jmpress viewport
-    var settings = this.$jmpress.jmpress('settings');
+    var settings = self.$jmpress.jmpress('settings');
     settings.viewPort.height = containerHeight;
     settings.viewPort.width = containerWidth;
-    this.$jmpress.jmpress('reselect');
+    self.$jmpress.jmpress('reselect');
   };
 
   ImpressPresentation.prototype.initZoomFunctionality = function () {
     var self = this;
-    this.$jmpress.jmpress("register", "zoomin", function () {
+    self.$jmpress.jmpress("register", "zoomin", function () {
       if (self.editing) {
         var $activeSlide = $(this).jmpress('active');
         $activeSlide.data().stepData.z += self.params.keyZoomAmount;
@@ -243,7 +246,7 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
       }
 
     });
-    this.$jmpress.jmpress("register", "zoomout", function () {
+    self.$jmpress.jmpress("register", "zoomout", function () {
       if (self.editing) {
         var $activeSlide = $(this).jmpress('active');
         $activeSlide.data().stepData.z -= self.params.keyZoomAmount;
@@ -253,7 +256,8 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
   };
 
   ImpressPresentation.prototype.refocusView = function () {
-    this.$jmpress.focus();
+    var self = this;
+    self.$jmpress.focus();
   };
 
   return ImpressPresentation;
