@@ -32,6 +32,9 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
         y: 0,
         x: 0,
         z: 0,
+        rotateX: 0,
+        rotateY: 0,
+        rotateZ: 0,
         absoluteRotation: 0
       }
     };
@@ -154,10 +157,6 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
 
     var id = viewInstance.idCounter;
     var centerText = viewInstance.params.positioning.centerText;
-    var yPos = viewInstance.params.positioning.y;
-    var xPos = viewInstance.params.positioning.x;
-    var zPos = viewInstance.params.positioning.z;
-    var rotation = viewInstance.params.positioning.absoluteRotation;
     var classString = STANDARD_VIEW_CLASS;
     if (centerText !== undefined && centerText) {
       classString += ' h5p-center-view';
@@ -166,17 +165,12 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
     var viewHtml =
       '<section class="' + classString +
       '" id="' + self.ID_PREFIX + id +
-      '" data-y="' + yPos +
-      '" data-x="' + xPos;
-
-    if (zPos !== undefined && !isNaN(zPos)) {
-      viewHtml += '" data-z="' + zPos;
-    }
-
-    if (rotation !== undefined && !isNaN(rotation)) {
-      viewHtml += '" data-rotate="' + rotation;
-    }
-
+      '" data-y="' + viewInstance.params.positioning.y +
+      '" data-x="' + viewInstance.params.positioning.x +
+      '" data-z="' + viewInstance.params.positioning.z +
+      '" data-rotate-x="' + viewInstance.params.positioning.rotateX +
+      '" data-rotate-y="' + viewInstance.params.positioning.rotateY +
+      '" data-rotate-z="' + viewInstance.params.positioning.rotateZ;
     viewHtml += '"></section>';
 
     return $(viewHtml);
