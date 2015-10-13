@@ -54,7 +54,7 @@
 		var index = 1 + name.substr(1).search(/[A-Z]/);
 		var prefix = name.substr(0, index).toLowerCase();
 		var postfix = name.substr(index).toLowerCase();
-		return "-" + prefix + "-" + postfix;
+		return (prefix!=="")?"-" + prefix + "-" + postfix:postfix;
 	}
 	function addComma( attribute ) {
 		if(!attribute) {

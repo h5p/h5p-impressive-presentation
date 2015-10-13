@@ -19,57 +19,79 @@
               "name": "action",
               "type": "library",
               "options": [
-                "H5P.Text 1.0",
-                "H5P.MarkTheWords 1.2",
-                "H5P.Blanks 1.2",
-                "H5P.InteractiveVideo 1.6",
-                "H5P.CoursePresentation 1.5"
+                "H5P.AdvancedText 1.1",
+                "H5P.MarkTheWords 1.4",
+                "H5P.Blanks 1.4",
+                "H5P.InteractiveVideo 1.7"
               ],
               "optional": true
             },
             {
-              "name": "centerText",
-              "type": "boolean",
-              "label": "center text",
-              "default": true,
-              "optional": true
+              "name": "positioning",
+              "type": "group",
+              "fields": [
+                {
+                  "name": "centerText",
+                  "type": "boolean",
+                  "label": "center text",
+                  "default": true,
+                  "optional": true
+                },
+                {
+                  "name": "xPosition",
+                  "type": "number",
+                  "label": "Absolute x position",
+                  "default": 0
+                },
+                {
+                  "name": "yPosition",
+                  "type": "number",
+                  "label": "Absolute y position",
+                  "default": 0
+                },
+                {
+                  "name": "zPosition",
+                  "type": "number",
+                  "label": "Absolute z position",
+                  "description": "Negative values are further away from the camera and positive values are closer.",
+                  "optional": true,
+                  "default": 0
+                },
+                {
+                  "name": "absoluteRotation",
+                  "type": "number",
+                  "label": "Absolute value rotation",
+                  "description": "Absolute rotation relative to 0 rotation. Normal rotation is 0.",
+                  "default": 0,
+                  "optional": true
+                }
+              ]
             },
             {
-              "name": "xPosition",
-              "type": "number",
-              "label": "Absolute x position",
-              "default": 0
-            },
-            {
-              "name": "yPosition",
-              "type": "number",
-              "label": "Absolute y position",
-              "default": 0
-            },
-            {
-              "name": "zPosition",
-              "type": "number",
-              "label": "Absolute z position",
-              "description": "Negative values are further away from the camera and positive values are closer.",
-              "optional": true,
-              "default": 0
-            },
-            {
-              "name": "absoluteRotation",
-              "type": "number",
-              "label": "Absolute value rotation",
-              "description": "Absolute rotation relative to 0 rotation. Normal rotation is 0.",
-              "default": 0,
-              "optional": true
-            },
-            {
-              "name": "absoluteScale",
-              "type": "number",
-              "label": "Absolute scale value of view",
-              "description": "Will scale the view, normal scale is 1. Allows up to 3 decimals.",
-              "decimals": 3,
-              "default": "1.0",
-              "optional": true
+              "name": "backgroundGroup",
+              "type": "group",
+              "fields": [
+                {
+                  "name": "transparentBackground",
+                  "type": "boolean",
+                  "label": "Transparent Background",
+                  "description": "Uncheck to choose background color",
+                  "default": true,
+                  "optional": true
+                },
+                {
+                  "name": "backgroundColor",
+                  "widget": "colorSelector",
+                  "spectrum": {
+                    "showInput": true
+                  },
+                  "type": "text",
+                  "label": "Background color",
+                  "description": "Optional, can be set to have a background color for this step",
+                  "default": "#fff",
+                  "optional": true
+                }
+              ]
             }
           ]
         }
