@@ -137,10 +137,27 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
     }).appendTo($container);
 
     // Process views
-    var $viewsContainer = $('<article class="jmpress" tabindex="0"></article>');
+    var $viewsContainer = $('<article class="jmpress" tabindex="0"></article>')
+      .focus(function () {
+      self.$overlay.addClass('hide');
+    }).blur(function () {
+      self.$overlay.removeClass('hide');
+    });
     self.processViews(self.params.viewsGroup.views, $viewsContainer);
     $viewsContainer.appendTo(self.$inner);
     self.$jmpress = $('.jmpress', self.$inner);
+
+    /**
+     * Overlay for handling focus.
+     * @type {*|HTMLElement}
+     */
+    self.$overlay = $('<div>', {
+      'class': 'h5p-impress-overlay'
+    }).click(function () {
+      $(this).addClass('hide');
+      self.$jmpress.focus();
+      return false;
+    }).appendTo($container);
 
     self.initJmpress();
     self.resize();

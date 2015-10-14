@@ -11,6 +11,20 @@
   transform:         translate3d(0,0,2px);
 }
 
+.h5p-impress-presentation .h5p-impress-overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 11;
+}
+
+.h5p-impress-presentation .h5p-impress-overlay.hide {
+  display: none;
+}
+
 .h5p-impress-presentation .h5p-standard-view {
   z-index: 1;
   width: 800px;
