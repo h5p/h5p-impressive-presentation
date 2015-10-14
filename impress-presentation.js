@@ -25,7 +25,10 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
     self.defaultStep = {
       action: {},
       backgroundGroup: {
-        transparentBackground: true
+        transparentBackground: true,
+        backgroundColor: 'fff',
+        backgroundWidth: 640,
+        backgroundHeight: 360
       },
       positioning: {
         centerText: true,
@@ -36,13 +39,20 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
         rotateY: 0,
         rotateZ: 0,
         absoluteRotation: 0
+      },
+      ordering: {
+        includeInPath: true,
+        pathIndex: 1
       }
     };
 
     self.defaults = {
-      viewsGroup: [
-        self.defaultStep
-      ],
+      viewsGroup: {
+        perspectiveRatio: 1,
+        views: [
+          self.defaultStep
+        ]
+      },
       viewPortWidth: 640,
       viewPortHeight: 360,
       keyZoomAmount: 10
@@ -85,7 +95,7 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
 
     // Process views
     var $viewsContainer = $('<article class="jmpress" tabindex="0"></article>');
-    self.processViews(self.params.viewsGroup, $viewsContainer);
+    self.processViews(self.params.viewsGroup.views, $viewsContainer);
     $viewsContainer.appendTo(self.$inner);
     self.$jmpress = $('.jmpress', self.$inner);
 
@@ -114,12 +124,48 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
       var $viewHtml = self.createViewHtml(viewObject);
       viewObject.$element = $viewHtml;
       self.createActionLibrary(viewObject);
+      self.createBackground(viewObject);
 
       self.viewElements.push(viewObject);
 
       self.idCounter += 1;
       $viewHtml.appendTo($wrapper);
     });
+  };
+
+  ImpressPresentation.prototype.createBackground = function (viewObject) {
+    if (!viewObject.params.backgroundGroup.transparentBackground) {
+
+      viewObject.$element.css({
+        width: viewObject.params.backgroundGroup.backgroundWidth,
+        height: viewObject.params.backgroundGroup.backgroundHeight
+      });
+
+      var $backgroundContainer = $('<div>', {
+        'class': 'h5p-impress-background'
+      }).appendTo(viewObject.$element);
+
+      // Check for image first
+      if (viewObject.params.backgroundGroup.backgroundImage) {
+        var path = viewObject.params.backgroundGroup.backgroundImage.path;
+        var $img = $('<img>', {
+          'src': H5P.getPath(path, this.contentId),
+          'class': 'h5p-impress-background-image'
+        }).load(function () {
+          var imgRatio = $img.width() / $img.height();
+          var elementRatio = viewObject.params.backgroundGroup.backgroundWidth / viewObject.params.backgroundGroup.backgroundHeight;
+
+          // If elementRatio is less then expand to width
+          if (elementRatio > imgRatio) {
+            $img.addClass('fit-to-height');
+          }
+        }).appendTo($backgroundContainer);
+      }
+      else if (viewObject.params.backgroundGroup.backgroundColor) {
+        console.log("has background color ?", viewObject.params.backgroundGroup.backgroundColor);
+        $backgroundContainer.css('background-color', '#' + viewObject.params.backgroundGroup.backgroundColor);
+      }
+    }
   };
 
   ImpressPresentation.prototype.createActionLibrary = function (viewObject) {
@@ -155,25 +201,27 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
   ImpressPresentation.prototype.createViewHtml = function (viewInstance) {
     var self = this;
 
-    var id = viewInstance.idCounter;
     var centerText = viewInstance.params.positioning.centerText;
     var classString = STANDARD_VIEW_CLASS;
     if (centerText !== undefined && centerText) {
       classString += ' h5p-center-view';
     }
 
-    var viewHtml =
-      '<section class="' + classString +
-      '" id="' + self.ID_PREFIX + id +
-      '" data-y="' + viewInstance.params.positioning.y +
-      '" data-x="' + viewInstance.params.positioning.x +
-      '" data-z="' + viewInstance.params.positioning.z +
-      '" data-rotate-x="' + viewInstance.params.positioning.rotateX +
-      '" data-rotate-y="' + viewInstance.params.positioning.rotateY +
-      '" data-rotate-z="' + viewInstance.params.positioning.rotateZ;
-    viewHtml += '"></section>';
+    var $viewHtml = $('<section>', {
+      'class': classString,
+      'id': self.ID_PREFIX + viewInstance.idCounter,
+      'data-x': viewInstance.params.positioning.x,
+      'data-y': viewInstance.params.positioning.y,
+      'data-z': viewInstance.params.positioning.z,
+      'data-rotate-x': viewInstance.params.positioning.rotateX,
+      'data-rotate-y': viewInstance.params.positioning.rotateY,
+      'data-rotate-z': viewInstance.params.positioning.rotateZ,
+      'data-exclude': !viewInstance.params.ordering.includeInPath
+    });
 
-    return $(viewHtml);
+    self.trigger('createdViewHtml', {$element: $viewHtml, id: viewInstance.idCounter});
+
+    return $viewHtml;
   };
 
   /**
@@ -227,6 +275,8 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
     var settings = self.$jmpress.jmpress('settings');
     settings.viewPort.height = containerHeight;
     settings.viewPort.width = containerWidth;
+    settings.perspective = containerWidth / self.params.viewsGroup.perspectiveRatio;
+
     self.$jmpress.jmpress('reselect');
   };
 

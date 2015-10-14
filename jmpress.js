@@ -82,6 +82,7 @@
 		,canvasClass: ''
 		,areaClass: ''
 		,notSupportedClass: 'not-supported'
+		,perspective: 1000
 
 		/* CONFIG */
 		,fullscreen: true
@@ -978,7 +979,7 @@
 		$.jmpress("css", eventData.area, {
 			left: eventData.settings.originX,
 			top: eventData.settings.originY,
-			perspective: '1000px'
+			perspective: eventData.settings.perspective + 'px'
 		});
 	});
 	$.jmpress("afterInit", function( nil, eventData ) {
@@ -1144,7 +1145,7 @@
 		props = {
 			// to keep the perspective look similar for different scales
 			// we need to 'scale' the perspective, too
-			perspective: Math.round(target.perspectiveScale * 1000) + "px"
+			perspective: Math.round(target.perspectiveScale * settings.perspective) + "px"
 		};
 		props = $.extend({}, animation, props);
 		if (!zoomin) {

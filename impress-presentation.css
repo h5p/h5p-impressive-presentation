@@ -12,9 +12,27 @@
 }
 
 .h5p-impress-presentation .h5p-standard-view {
+  z-index: 1;
   width: 800px;
 }
 
 .h5p-impress-presentation .h5p-standard-view.h5p-center-view {
   text-align: center;
+}
+
+.h5p-impress-presentation .h5p-impress-background {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.h5p-impress-presentation .h5p-impress-background img {
+  width: 100%;
+  height: auto;
+}
+
+.h5p-impress-presentation .h5p-impress-background img.fit-to-height {
+  height: 100%;
+  width: auto;
 }

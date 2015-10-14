@@ -5,6 +5,13 @@
     "widget": "impressPresentationEditor",
     "fields": [
       {
+        "name": "perspectiveRatio",
+        "type": "number",
+        "label": "Perspective ratio",
+        "default": 1,
+        "optional": true
+      },
+      {
         "name": "views",
         "type": "list",
         "label": "Create views",
@@ -104,7 +111,48 @@
                   "type": "text",
                   "label": "Background color",
                   "description": "Optional, can be set to have a background color for this step",
-                  "default": "#fff",
+                  "default": "fff",
+                  "optional": true
+                },
+                {
+                  "name": "backgroundImage",
+                  "type": "image",
+                  "label": "Background image",
+                  "optional": true
+                },
+                {
+                  "name": "backgroundWidth",
+                  "type": "number",
+                  "label": "Background width",
+                  "default": 640,
+                  "optional": true
+                },
+                {
+                  "name": "backgroundHeight",
+                  "type": "number",
+                  "label": "Background width",
+                  "default": 360,
+                  "optional": true
+                }
+              ]
+            },
+            {
+              "name": "ordering",
+              "type": "group",
+              "label": "Ordering",
+              "fields": [
+                {
+                  "name": "includeInPath",
+                  "type": "boolean",
+                  "label": "Include step in path",
+                  "default": true,
+                  "optional": true
+                },
+                {
+                  "name": "pathIndex",
+                  "type": "number",
+                  "label": "Index in path",
+                  "default": 1,
                   "optional": true
                 }
               ]
