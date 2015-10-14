@@ -1,3 +1,7 @@
+.h5p-impress-presentation {
+  position: relative;
+}
+
 .h5p-impress-presentation .jmpress {
   height: 100%;
   width: 100%;
@@ -19,6 +23,14 @@
   height: 100%;
   width: 100%;
   z-index: 11;
+}
+
+.h5p-impress-presentation .h5p-standard-view.has-background .h5p-impress-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 .h5p-impress-presentation .h5p-impress-overlay.hide {

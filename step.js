@@ -38,6 +38,7 @@ H5P.ImpressPresentation.Step = (function ($) {
       }
 
       setBackgroundSize();
+      $element.addClass('has-background');
 
       var $backgroundContainer = $('<div>', {
         'class': 'h5p-impress-background'
