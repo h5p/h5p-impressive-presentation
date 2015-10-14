@@ -18,6 +18,9 @@
       "path": "jmpress.js"
     },
     {
+      "path": "step.js"
+    },
+    {
       "path": "impress-presentation.js"
     }
   ],

@@ -4,9 +4,7 @@ var H5P = H5P || {};
  * Impress Presentation module
  * @external {jQuery} $ H5P.jQuery
  */
-H5P.ImpressPresentation = (function ($, EventDispatcher) {
-
-  var STANDARD_VIEW_CLASS = 'h5p-standard-view';
+H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
 
   /**
    * Initialize module.
@@ -16,13 +14,22 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
    */
   function ImpressPresentation(params, contentId) {
     var self = this;
-    self.contentId = contentId;
 
+    /**
+     * Inherit event functionality
+     */
     EventDispatcher.call(this);
 
-    console.log(params);
+    /**
+     * Keep track of content id
+     * @type {Number}
+     */
+    self.contentId = contentId;
 
-    self.defaultStep = {
+    /**
+     * Default step parameters
+     */
+    self.defaultStepParams = {
       action: {},
       backgroundGroup: {
         transparentBackground: true,
@@ -46,11 +53,14 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
       }
     };
 
-    self.defaults = {
+    /**
+     * Default IP parameters
+     */
+    self.defaultParams = {
       viewsGroup: {
         perspectiveRatio: 1,
         views: [
-          self.defaultStep
+          self.defaultStepParams
         ]
       },
       viewPortWidth: 640,
@@ -58,23 +68,56 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
       keyZoomAmount: 10
     };
 
-    self.ID_PREFIX = 'h5p-impres-id-';
-    self.idCounter = 0;
-    self.editing = false;
-
-    // Set default behavior.
+    // Extend default params
     self.params = $.extend(true, self.defaults, params);
 
-    // Keep track of view elements
-    self.viewElements = [];
+    /**
+     * Default jmpress config
+     */
+    self.jmpressConfig = {
+      stepSelector: 'section',
+      viewPort: {
+        height: self.defaultParams.viewPortHeight,
+        width: self.defaultParams.viewPortWidth
+      },
+      keyboard: {
+        keys: {
+          37: 'prev',
+          39: 'next',
+          49: 'zoomin',
+          50: 'zoomout'
+        },
+        use: true
+      },
+      containerClass: 'jmpress-container',
+      canvasClass: 'jmpress-canvas',
+      areaClass: 'jmpress-area-camera',
+      fullscreen: false,
+      hash: { use: false}
+    };
 
-    // Array containing all libraries.
-    self.content = [];
+    /**
+     * Keeps track of step id
+     * @type {number}
+     */
+    self.idCounter = 0;
+
+    /**
+     * Keeps track of steps
+     * @type {Array}
+     */
+    self.steps = [];
 
     self.on('resize', function () {
       self.resize();
     });
   }
+
+  /**
+   * Static final id prefix for sections.
+   * @type {string}
+   */
+  ImpressPresentation.ID_PREFIX = 'h5p-impress-id-';
 
   // Inherit from event dispatcher
   ImpressPresentation.prototype = Object.create(EventDispatcher.prototype);
@@ -100,166 +143,58 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
     self.$jmpress = $('.jmpress', self.$inner);
 
     self.initJmpress();
-    self.initZoomFunctionality();
     self.resize();
   };
 
-  ImpressPresentation.prototype.processViews = function (viewsData, $wrapper) {
-    console.log(viewsData);
-    // Remove all children
-    $wrapper.children().remove();
-
+  /**
+   * Process view params, creating objects and attaching elements.
+   * @param {Array} viewParams Array containing view params to be processed
+   * @param {jQuery} $wrapper
+   */
+  ImpressPresentation.prototype.processViews = function (viewParams, $wrapper) {
     var self = this;
-    self.content = [];
 
-    if (viewsData === undefined) {
+    // No data
+    if (viewParams === undefined) {
       return $wrapper;
     }
 
-    // Clear view elements before (re)populating it
-    self.viewElements = [];
+    // Remove children before (re)populating
+    $wrapper.children().remove();
+    self.steps = [];
 
-    viewsData.forEach(function (viewInstance) {
-      var viewObject = self.createViewObject(self.idCounter, viewInstance);
-      var $viewHtml = self.createViewHtml(viewObject);
-      viewObject.$element = $viewHtml;
-      self.createActionLibrary(viewObject);
-      self.createBackground(viewObject);
-
-      self.viewElements.push(viewObject);
-
-      self.idCounter += 1;
-      $viewHtml.appendTo($wrapper);
+    viewParams.forEach(function (viewInstance) {
+      self.processView(viewInstance, $wrapper);
     });
   };
 
-  ImpressPresentation.prototype.createBackground = function (viewObject) {
-    if (!viewObject.params.backgroundGroup.transparentBackground) {
-
-      viewObject.$element.css({
-        width: viewObject.params.backgroundGroup.backgroundWidth,
-        height: viewObject.params.backgroundGroup.backgroundHeight
-      });
-
-      var $backgroundContainer = $('<div>', {
-        'class': 'h5p-impress-background'
-      }).appendTo(viewObject.$element);
-
-      // Check for image first
-      if (viewObject.params.backgroundGroup.backgroundImage) {
-        var path = viewObject.params.backgroundGroup.backgroundImage.path;
-        var $img = $('<img>', {
-          'src': H5P.getPath(path, this.contentId),
-          'class': 'h5p-impress-background-image'
-        }).load(function () {
-          var imgRatio = $img.width() / $img.height();
-          var elementRatio = viewObject.params.backgroundGroup.backgroundWidth / viewObject.params.backgroundGroup.backgroundHeight;
-
-          // If elementRatio is less then expand to width
-          if (elementRatio > imgRatio) {
-            $img.addClass('fit-to-height');
-          }
-        }).appendTo($backgroundContainer);
-      }
-      else if (viewObject.params.backgroundGroup.backgroundColor) {
-        console.log("has background color ?", viewObject.params.backgroundGroup.backgroundColor);
-        $backgroundContainer.css('background-color', '#' + viewObject.params.backgroundGroup.backgroundColor);
-      }
-    }
-  };
-
-  ImpressPresentation.prototype.createActionLibrary = function (viewObject) {
+  /**
+   * Create view and append it to wrapper.
+   * @param {Object} viewInstance
+   * @param {jQuery} $wrapper
+   */
+  ImpressPresentation.prototype.processView = function (viewInstance, $wrapper) {
     var self = this;
-    var viewInstance = viewObject.params;
-    var $viewHtml = viewObject.$element;
-    if (viewInstance.action && viewInstance.action.library) {
 
-      var $libraryContainer = $('<div>', {
-        'class': 'h5p-impress-content'
-      }).appendTo($viewHtml);
+    // Create object
+    var step = new Step(self.idCounter, viewInstance)
+      .init()
+      .setBackground(this.contentId)
+      .appendTo($wrapper);
 
-      var actionInstance = new H5P.newRunnable(viewInstance.action, self.contentId, $libraryContainer);
-      self.content.push(actionInstance);
-    }
+    self.trigger('createdStep', step);
+
+    self.steps.push(step);
+    self.idCounter += 1;
   };
 
   /**
-   *
-   * @param idCounter
-   * @param params
-   * @param [$element]
-   * @returns {{idCounter: *, params: *, $element: *}}
+   * Initializes Jmpress.
+   * @param {Object} [config] Falls back to default config
    */
-  ImpressPresentation.prototype.createViewObject = function (idCounter, params, $element) {
-    return {
-      idCounter: idCounter,
-      params: params,
-      $element: $element
-    }
-  };
-
-  ImpressPresentation.prototype.createViewHtml = function (viewInstance) {
+  ImpressPresentation.prototype.initJmpress = function (config) {
     var self = this;
-
-    var centerText = viewInstance.params.positioning.centerText;
-    var classString = STANDARD_VIEW_CLASS;
-    if (centerText !== undefined && centerText) {
-      classString += ' h5p-center-view';
-    }
-
-    var $viewHtml = $('<section>', {
-      'class': classString,
-      'id': self.ID_PREFIX + viewInstance.idCounter,
-      'data-x': viewInstance.params.positioning.x,
-      'data-y': viewInstance.params.positioning.y,
-      'data-z': viewInstance.params.positioning.z,
-      'data-rotate-x': viewInstance.params.positioning.rotateX,
-      'data-rotate-y': viewInstance.params.positioning.rotateY,
-      'data-rotate-z': viewInstance.params.positioning.rotateZ,
-      'data-exclude': !viewInstance.params.ordering.includeInPath
-    });
-
-    self.trigger('createdViewHtml', {$element: $viewHtml, id: viewInstance.idCounter});
-
-    return $viewHtml;
-  };
-
-  /**
-   * Initializes jmpress, this needs to be run to get proper behaviour from the container.
-   */
-  ImpressPresentation.prototype.initJmpress = function (width, height) {
-    var self = this;
-
-    if (!width) {
-      width = self.params.viewPortWidth;
-    }
-
-    if (!height) {
-      height = self.params.viewPortHeight;
-    }
-
-    var config = {
-      stepSelector: 'section',
-      viewPort: {
-        height: height,
-        width: width
-      },
-      keyboard: {
-        keys: {
-          37: 'prev',
-          39: 'next',
-          49: 'zoomin',
-          50: 'zoomout'
-        },
-        use: true
-      },
-      containerClass: 'jmpress-container',
-      canvasClass: 'jmpress-canvas',
-      areaClass: 'jmpress-area-camera',
-      fullscreen: false,
-      hash: { use: false}
-    };
-
+    config = config ? config : self.jmpressConfig;
     self.$jmpress.jmpress(config);
   };
 
@@ -280,25 +215,6 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
     self.$jmpress.jmpress('reselect');
   };
 
-  ImpressPresentation.prototype.initZoomFunctionality = function () {
-    var self = this;
-    self.$jmpress.jmpress("register", "zoomin", function () {
-      if (self.editing) {
-        var $activeSlide = $(this).jmpress('active');
-        $activeSlide.data().stepData.z += self.params.keyZoomAmount;
-        //self.reselectStep();
-      }
-
-    });
-    self.$jmpress.jmpress("register", "zoomout", function () {
-      if (self.editing) {
-        var $activeSlide = $(this).jmpress('active');
-        $activeSlide.data().stepData.z -= self.params.keyZoomAmount;
-        //self.reselectStep();
-      }
-    });
-  };
-
   ImpressPresentation.prototype.refocusView = function () {
     var self = this;
     self.$jmpress.focus();
@@ -306,4 +222,4 @@ H5P.ImpressPresentation = (function ($, EventDispatcher) {
 
   return ImpressPresentation;
 
-}(H5P.jQuery, H5P.EventDispatcher));
+}(H5P.jQuery, H5P.EventDispatcher, H5P.ImpressPresentation.Step));
