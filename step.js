@@ -90,7 +90,8 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
       if (params.backgroundGroup.backgroundImage) {
         setBackgroundImage($backgroundContainer, contentId)
       }
-      else if (params.backgroundGroup.backgroundColor) {
+
+      if (params.backgroundGroup.backgroundColor) {
         $backgroundContainer.css('background-color', '#' + params.backgroundGroup.backgroundColor);
       }
 
