@@ -137,10 +137,9 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
     }).appendTo($container);
 
     // Process views
-    var $viewsContainer = $('<article class="jmpress" tabindex="0"></article>');
-    self.processViews(self.params.viewsGroup.views, $viewsContainer);
-    $viewsContainer.appendTo(self.$inner);
-    self.$jmpress = $('.jmpress', self.$inner);
+    self.$jmpress = $('<article class="jmpress" tabindex="0"></article>');
+    self.processSteps(self.params.viewsGroup.views);
+    self.$jmpress.appendTo(self.$inner);
 
     /**
      * Overlay for handling focus.
@@ -160,44 +159,75 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
 
   /**
    * Process view params, creating objects and attaching elements.
-   * @param {Array} viewParams Array containing view params to be processed
-   * @param {jQuery} $wrapper
+   * @param {Array} stepParams Array containing step params to be processed
    */
-  ImpressPresentation.prototype.processViews = function (viewParams, $wrapper) {
+  ImpressPresentation.prototype.processSteps = function (stepParams) {
     var self = this;
 
     // No data
-    if (viewParams === undefined) {
-      return $wrapper;
+    if (stepParams === undefined) {
+      return;
     }
 
     // Remove children before (re)populating
-    $wrapper.children().remove();
+    self.$jmpress.children().remove();
     self.steps = [];
 
-    viewParams.forEach(function (viewInstance) {
-      self.processView(viewInstance, $wrapper);
+    stepParams.forEach(function (singleStepParams) {
+      self.createStep(singleStepParams);
     });
   };
 
   /**
    * Create view and append it to wrapper.
-   * @param {Object} viewInstance
-   * @param {jQuery} $wrapper
+   * @param {Object} singleStepParams
+   * @param {Boolean} addToParams
+   * @returns {Step} step
    */
-  ImpressPresentation.prototype.processView = function (viewInstance, $wrapper) {
+  ImpressPresentation.prototype.createStep = function (singleStepParams, addToParams) {
     var self = this;
 
+    addToParams = addToParams ? addToParams : false;
+
     // Create object
-    var step = new Step(self.idCounter, viewInstance)
+    var step = new Step(self.idCounter, singleStepParams)
       .init()
       .setBackground(this.contentId)
-      .appendTo($wrapper);
+      .appendTo(self.$jmpress);
 
     self.trigger('createdStep', step);
+    if (addToParams) {
+      self.params.viewsGroup.views.push(singleStepParams);
+    }
 
     self.steps.push(step);
     self.idCounter += 1;
+
+    return step;
+  };
+
+  /**
+   * Get step from unique id
+   * @param {Number} uniqueId
+   * @returns {Step|undefined}
+   */
+  ImpressPresentation.prototype.getStep = function (uniqueId) {
+    var self = this;
+    var i;
+    var step;
+    for (i = 0; i < self.steps.length; i++) {
+      if (self.steps[i].getId() === uniqueId) {
+        step = self.steps[i];
+        break;
+      }
+    }
+
+    return step;
+  };
+
+  ImpressPresentation.prototype.removeStep = function (uniqueId) {
+    var self = this;
+    self.steps.splice(uniqueId, 1);
   };
 
   /**

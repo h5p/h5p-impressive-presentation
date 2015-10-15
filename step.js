@@ -32,6 +32,11 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
     var $libraryContainer;
 
     /**
+     * Library semantics form
+     */
+    var $libraryForm;
+
+    /**
      * Keep track of semantics
      * @type {Array}
      */
@@ -80,6 +85,54 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
     };
 
     /**
+     * Activate step dynamically for $jmpress element
+     * @param {Object} jmpress
+     */
+    self.activateStep = function (jmpress) {
+      jmpress.jmpress('canvas').append($element);
+      jmpress.jmpress('init', $element);
+
+      return self;
+    };
+
+    /**
+     * Deactivate and remove step dynamically.
+     * @param {Object} jmpress
+     */
+    self.removeStep = function (jmpress) {
+      jmpress.jmpress('deinit', $element);
+      $element.remove();
+    };
+
+    /**
+     * Create example content
+     */
+    self.createExampleContent = function (libraries) {
+      // Find Advanced Text library with correct version from semantics, should be more robust.
+      var libraryOptions = libraries;
+      var foundLib = false;
+      for (var libIndex in libraryOptions) {
+        if (libraryOptions.hasOwnProperty(libIndex) && !foundLib) {
+          var library = libraryOptions[libIndex];
+          if ((typeof library === 'string' || library instanceof String)
+            && library.indexOf('AdvancedText') > -1) {
+            params.action = {
+              library: library,
+              params: {
+                text: '<p>Example content!</p>'
+              },
+              subContentId: H5P.createUUID()
+            };
+            self.updateLibrary();
+            return self;
+          }
+        }
+      }
+
+      return self;
+    };
+
+    /**
      * Disable library interaction. Useful when editing.
      */
     self.disableContentInteraction = function () {
@@ -89,6 +142,8 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
       }).click(function () {
         return false;
       }).appendTo($libraryContainer);
+
+      return self;
     };
 
     /**
@@ -96,6 +151,8 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
      */
     self.updateLibrary = function () {
       createLibrary();
+
+      return self;
     };
 
     /**
@@ -128,6 +185,26 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
      */
     self.setParams = function (newParams) {
       params = newParams;
+
+      return self;
+    };
+
+    /**
+     * Get library form
+     * @returns {jQuery} $libraryForm
+     */
+    self.getLibraryForm = function () {
+      return $libraryForm;
+    };
+
+    /**
+     * Set library form
+     * @param {jQuery} $element
+     */
+    self.setLibraryForm = function ($element) {
+      $libraryForm = $element;
+
+      return self;
     };
 
     /**
