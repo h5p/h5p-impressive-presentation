@@ -5,7 +5,7 @@ H5P.ImpressPresentation = H5P.ImpressPresentation ? H5P.ImpressPresentation : {}
  * Step module
  * @external {jQuery} $ H5P.jQuery
  */
-H5P.ImpressPresentation.Step = (function ($) {
+H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
 
   /**
    * Step helper class for keeping track of step data
@@ -15,8 +15,32 @@ H5P.ImpressPresentation.Step = (function ($) {
    */
   function Step(idCounter, params) {
     var self = this;
+
+    /**
+     * Step section element
+     */
     var $element;
+
+    /**
+     * Library content
+     */
     var library;
+
+    /**
+     * Library container element
+     */
+    var $libraryContainer;
+
+    /**
+     * Keep track of semantics
+     * @type {Array}
+     */
+    self.children = [];
+
+    /**
+     * Inherit event functionality
+     */
+    EventDispatcher.call(this);
 
     /**
      * Initialize step
@@ -56,6 +80,25 @@ H5P.ImpressPresentation.Step = (function ($) {
     };
 
     /**
+     * Disable library interaction. Useful when editing.
+     */
+    self.disableContentInteraction = function () {
+      // Overlay to prevent clicks in editor.
+      $('<div>', {
+        'class': 'h5p-content-overlay'
+      }).click(function () {
+        return false;
+      }).appendTo($libraryContainer);
+    };
+
+    /**
+     * Update element. Used when params are changed.
+     */
+    self.updateLibrary = function () {
+      createLibrary();
+    };
+
+    /**
      * Get element
      * @returns {jQuery} $element
      */
@@ -69,6 +112,22 @@ H5P.ImpressPresentation.Step = (function ($) {
      */
     self.getId = function () {
       return idCounter;
+    };
+
+    /**
+     * Get step params
+     * @returns {Object} params
+     */
+    self.getParams = function () {
+      return params;
+    };
+
+    /**
+     * Set step params
+     * @param {Object} newParams
+     */
+    self.setParams = function (newParams) {
+      params = newParams;
     };
 
     /**
@@ -105,13 +164,16 @@ H5P.ImpressPresentation.Step = (function ($) {
      * Create library and add it to section
      */
     var createLibrary = function () {
+      $element.children().remove();
       if (params.action && params.action.library) {
 
-        var $libraryContainer = $('<div>', {
+        $libraryContainer = $('<div>', {
           'class': 'h5p-impress-content'
         }).appendTo($element);
 
         library = new H5P.newRunnable(params.action, self.contentId, $libraryContainer);
+
+        self.trigger('createdLibraryElement', $libraryContainer);
       }
     };
 
@@ -156,5 +218,9 @@ H5P.ImpressPresentation.Step = (function ($) {
     };
   }
 
+  // Inherit from event dispatcher
+  Step.prototype = Object.create(EventDispatcher.prototype);
+  Step.prototype.constructor = Step;
+
   return Step;
-}(H5P.jQuery));
+}(H5P.jQuery, H5P.EventDispatcher));
