@@ -37,6 +37,16 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
     var $libraryForm;
 
     /**
+     * Background container element
+     */
+    var $backgroundContainer;
+
+    /**
+     * Background semantics form
+     */
+    var $backgroundForm;
+
+    /**
      * Keep track of semantics
      * @type {Array}
      */
@@ -63,13 +73,16 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
     self.setBackground = function (contentId) {
       // Skip transparent steps
       if (params.backgroundGroup.transparentBackground) {
+        if ($backgroundContainer) {
+          $backgroundContainer.detach();
+        }
         return self;
       }
 
       setBackgroundSize();
       $element.addClass('has-background');
 
-      var $backgroundContainer = $('<div>', {
+      $backgroundContainer = $('<div>', {
         'class': 'h5p-impress-background'
       }).appendTo($element);
 
@@ -199,12 +212,45 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
 
     /**
      * Set library form
-     * @param {jQuery} $element
+     * @param {jQuery} $element Library form
      */
     self.setLibraryForm = function ($element) {
       $libraryForm = $element;
 
       return self;
+    };
+
+    /**
+     * Get background form
+     * @returns {jQuery} $backgroundForm
+     */
+    self.getBackgroundForm = function () {
+      return $backgroundForm;
+    };
+
+    /**
+     * Set background form
+     * @param {jQuery} $element Background form
+     */
+    self.setBackgroundForm = function ($element) {
+      $backgroundForm = $element;
+
+      return self;
+    };
+
+    /**
+     * Returns true if step is included in route.
+     */
+    self.getRouteState = function () {
+      return params.ordering.includeInPath;
+    };
+
+    /**
+     * Determines if step should be included in route.
+     * @param {Boolean} includeInPath
+     */
+    self.setRouteState = function (includeInPath) {
+      params.ordering.includeInPath = includeInPath;
     };
 
     /**
@@ -241,7 +287,9 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
      * Create library and add it to section
      */
     var createLibrary = function () {
-      $element.children().remove();
+      if ($libraryContainer) {
+        $libraryContainer.detach();
+      }
       if (params.action && params.action.library) {
 
         $libraryContainer = $('<div>', {

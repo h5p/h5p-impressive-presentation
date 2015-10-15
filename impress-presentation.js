@@ -108,6 +108,12 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
      */
     self.steps = [];
 
+    /**
+     * Keeps track of route order when navigating between steps
+     * @type {Array}
+     */
+    self.route = [];
+
     self.on('resize', function () {
       self.resize();
     });
@@ -125,7 +131,6 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
 
   /**
    * Attach function called by H5P framework to insert H5P content into page.
-   *
    * @param {jQuery} $container The container which will be appended to.
    */
   ImpressPresentation.prototype.attach = function ($container) {
@@ -154,6 +159,7 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
     }).appendTo($container);
 
     self.initJmpress();
+    self.updateRoute();
     self.resize();
   };
 
@@ -181,23 +187,33 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
   /**
    * Create view and append it to wrapper.
    * @param {Object} singleStepParams
-   * @param {Boolean} addToParams
+   * @param {Boolean} [addToParams]
+   * @param {Number} [afterIndex]
    * @returns {Step} step
    */
-  ImpressPresentation.prototype.createStep = function (singleStepParams, addToParams) {
+  ImpressPresentation.prototype.createStep = function (singleStepParams, addToParams, afterIndex) {
     var self = this;
 
     addToParams = addToParams ? addToParams : false;
+
+    var $stepContainer = self.$jmpress;
+    if (self.$jmpress.jmpress('initialized')) {
+      $stepContainer = self.$jmpress.jmpress('canvas');
+    }
 
     // Create object
     var step = new Step(self.idCounter, singleStepParams)
       .init()
       .setBackground(this.contentId)
-      .appendTo(self.$jmpress);
+      .appendTo($stepContainer);
 
     self.trigger('createdStep', step);
     if (addToParams) {
       self.params.viewsGroup.views.push(singleStepParams);
+    }
+
+    if (singleStepParams.ordering.includeInPath) {
+      self.addToRoute(step.getId(), afterIndex);
     }
 
     self.steps.push(step);
@@ -207,9 +223,65 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
   };
 
   /**
+   * Remove step corresponding to step id
+   * @param {Number} stepId
+   */
+  ImpressPresentation.prototype.removeStep = function (stepId) {
+    var self = this;
+    self.steps.splice(stepId, 1);
+    self.removeFromRoute(stepId);
+    self.updateRoute();
+  };
+
+  /**
+   * Add to navigation route
+   * @param {Number} stepId
+   * @param {Number} [insertAfterId] Element will be inserted after given id in route
+   */
+  ImpressPresentation.prototype.addToRoute = function (stepId, insertAfterId) {
+    var self = this;
+    var elementId = self.createUniqueElementId(stepId);
+
+    // Already exists
+    if (self.route.indexOf(stepId) > -1) {
+      return;
+    }
+
+    var indexOfAfterElement;
+    if (insertAfterId !== undefined) {
+      var afterElementId = self.createUniqueElementId(insertAfterId);
+      indexOfAfterElement = self.route.indexOf(afterElementId);
+    }
+
+    if (indexOfAfterElement !== undefined && indexOfAfterElement >= 0 && indexOfAfterElement < self.route.length - 1) {
+      self.route.splice((indexOfAfterElement + 1), 0, elementId);
+    }
+    else {
+      self.route.push(elementId);
+    }
+  };
+
+  ImpressPresentation.prototype.removeFromRoute = function (stepId) {
+    var self = this;
+    var elementId = self.createUniqueElementId(stepId);
+    var routeIndex = self.route.indexOf(elementId);
+    if (routeIndex > -1) {
+      self.route.splice(routeIndex, 1);
+    }
+  };
+
+  /**
+   * Update route.
+   */
+  ImpressPresentation.prototype.updateRoute = function () {
+    var self = this;
+    self.$jmpress.jmpress('route', $.merge($.merge([self.route[self.route.length - 1]], self.route), [self.route[0]]));
+  };
+
+  /**
    * Get step from unique id
    * @param {Number} uniqueId
-   * @returns {Step|undefined}
+   * @returns {H5P.ImpressPresentation.Step|undefined}
    */
   ImpressPresentation.prototype.getStep = function (uniqueId) {
     var self = this;
@@ -225,9 +297,8 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
     return step;
   };
 
-  ImpressPresentation.prototype.removeStep = function (uniqueId) {
-    var self = this;
-    self.steps.splice(uniqueId, 1);
+  ImpressPresentation.prototype.createUniqueElementId = function (uniqueId) {
+    return '#' + ImpressPresentation.ID_PREFIX + uniqueId;
   };
 
   /**

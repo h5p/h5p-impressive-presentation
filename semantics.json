@@ -130,7 +130,7 @@
                 {
                   "name": "backgroundHeight",
                   "type": "number",
-                  "label": "Background width",
+                  "label": "Background height",
                   "default": 360,
                   "optional": true
                 }
