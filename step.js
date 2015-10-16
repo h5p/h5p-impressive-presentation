@@ -47,6 +47,11 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
     var $backgroundForm;
 
     /**
+     * Keep track of step name
+     */
+    var userDefinedName;
+
+    /**
      * Keep track of semantics
      * @type {Array}
      */
@@ -183,6 +188,25 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
      */
     self.getId = function () {
       return idCounter;
+    };
+
+    /**
+     * Get user defined name.
+     * @returns {String}
+     */
+    self.getName = function () {
+      return userDefinedName;
+    };
+
+    /**
+     * Set user defined name.
+     * @param {String} name
+     * @returns {H5P.ImpressPresentation.Step}
+     */
+    self.setName = function (name) {
+      userDefinedName = name;
+
+      return self;
     };
 
     /**

@@ -44,11 +44,15 @@
 .h5p-impress-presentation .h5p-impress-background {
   position: absolute;
   top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
 }
 
 .h5p-impress-presentation .h5p-impress-background img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   width: 100%;
   height: auto;
 }
@@ -64,13 +68,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 .h5p-impress-presentation .h5p-standard-view.has-background .h5p-impress-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 1;
 }
 
