@@ -49,7 +49,7 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
       },
       ordering: {
         includeInPath: true,
-        pathIndex: 1
+        uniqueId: 0
       }
     };
 
@@ -159,6 +159,8 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
     }).appendTo($container);
 
     self.initJmpress();
+    self.route = self.params.viewsGroup.route ? self.params.viewsGroup.route : self.route;
+    self.$jmpress.jmpress('goTo', self.route[0]);
     self.updateRoute();
     self.resize();
   };
@@ -201,6 +203,9 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
       $stepContainer = self.$jmpress.jmpress('canvas');
     }
 
+    // Add id counter to params
+    singleStepParams.ordering.uniqueId = self.idCounter;
+
     // Create object
     var step = new Step(self.idCounter, singleStepParams)
       .init()
@@ -230,6 +235,7 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
     var self = this;
     self.steps.splice(stepId, 1);
     self.removeFromRoute(stepId);
+    self.params.viewsGroup.views.splice(self.getStepParamsIndexById(stepId), 1);
     self.updateRoute();
   };
 
@@ -281,7 +287,7 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
   /**
    * Get step from unique id
    * @param {Number} uniqueId
-   * @returns {H5P.ImpressPresentation.Step|undefined}
+   * @returns {H5P.ImpressPresentation.Step}
    */
   ImpressPresentation.prototype.getStep = function (uniqueId) {
     var self = this;
@@ -299,6 +305,21 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
 
   ImpressPresentation.prototype.createUniqueElementId = function (uniqueId) {
     return '#' + ImpressPresentation.ID_PREFIX + uniqueId;
+  };
+
+  /**
+   * Get step param by id.
+   * @param {Number} id
+   * @returns {Object}
+   */
+  ImpressPresentation.prototype.getStepParamsIndexById = function (id) {
+    var self = this;
+    var i;
+    for (i = 0; i < self.params.viewsGroup.views.length; i++) {
+      if (self.params.viewsGroup.views[i].ordering.uniqueId === id) {
+        return i;
+      }
+    }
   };
 
   /**

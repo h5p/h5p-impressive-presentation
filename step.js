@@ -42,6 +42,11 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
     var $backgroundContainer;
 
     /**
+     * Background image element
+     */
+    var $backgroundImage;
+
+    /**
      * Background semantics form
      */
     var $backgroundForm;
@@ -79,7 +84,7 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
         return self;
       }
 
-      setBackgroundSize();
+      self.setBackgroundSize();
       $element.addClass('has-background');
 
       $backgroundContainer = $('<div>', {
@@ -96,6 +101,24 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
       }
 
       return self;
+    };
+
+    /**
+     * Set background size for section
+     * @param {Number} [width]
+     * @param {Number} [height]
+     */
+    self.setBackgroundSize = function (width, height) {
+      // Default to params
+      params.backgroundGroup.backgroundWidth = width ? width : params.backgroundGroup.backgroundWidth;
+      params.backgroundGroup.backgroundHeight = height ? height : params.backgroundGroup.backgroundHeight;
+
+      $element.css({
+        width: params.backgroundGroup.backgroundWidth + 'px',
+        height: params.backgroundGroup.backgroundHeight + 'px'
+      });
+
+      resizeImage();
     };
 
     /**
@@ -323,19 +346,15 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
     };
 
     /**
-     * Set background size for section
-     * @param {Number} [width]
-     * @param {Number} [height]
+     *  If image ratio is smaller than background ratio expand height of image
      */
-    var setBackgroundSize = function (width, height) {
-      // Default to params
-      width = width ? width : params.backgroundGroup.backgroundWidth;
-      height = height ? height : params.backgroundGroup.backgroundHeight;
-
-      $element.css({
-        width: width,
-        height: height
-      });
+    var resizeImage = function () {
+      if (!$backgroundImage) {
+        return;
+      }
+      var imageRatio = $backgroundImage.width() / $backgroundImage.height();
+      var backgroundRatio = params.backgroundGroup.backgroundWidth / params.backgroundGroup.backgroundHeight;
+      $backgroundImage.toggleClass('fit-to-height', imageRatio < backgroundRatio);
     };
 
     /**
@@ -344,21 +363,15 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
      * @param {Number} contentId Content id of image parent
      */
     var setBackgroundImage = function ($backgroundContainer, contentId) {
-
+      if ($backgroundImage) {
+        $backgroundImage.detach();
+      }
       // Create image and append to container
-      var $img = $('<img>', {
+      $backgroundImage = $('<img>', {
         'src': H5P.getPath(params.backgroundGroup.backgroundImage.path, contentId),
         'class': 'h5p-impress-background-image'
       }).load(function () {
-
-        // If image ratio is smaller than background ratio expand height of image
-        var imageRatio = $img.width() / $img.height();
-        var backgroundRatio = params.backgroundGroup.backgroundWidth / params.backgroundGroup.backgroundHeight;
-
-        if (imageRatio < backgroundRatio) {
-          $img.addClass('fit-to-height');
-        }
-
+        resizeImage();
       }).appendTo($backgroundContainer);
     };
   }
