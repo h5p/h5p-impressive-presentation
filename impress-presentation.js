@@ -204,6 +204,15 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
     }
 
     // Add id counter to params
+    if (singleStepParams.ordering.uniqueId !== undefined) {
+      if (singleStepParams.ordering.uniqueId > self.idCounter) {
+        self.idCounter = singleStepParams.ordering.uniqueId;
+      }
+    } else {
+      singleStepParams.ordering.uniqueId = self.idCounter;
+    }
+
+    // Add id counter to params
     singleStepParams.ordering.uniqueId = self.idCounter;
 
     // Create object
