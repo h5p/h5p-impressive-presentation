@@ -4,15 +4,17 @@ var H5P = H5P || {};
  * Impress Presentation module
  * @external {jQuery} $ H5P.jQuery
  */
-H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
+H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
 
   /**
    * Initialize module.
    * @param {Object} params Behavior settings
    * @param {Number} contentId Content identification
+   * @param {Object} [options] Options object
+   * @param {Boolean} [options.disableNavLine] Disable navigation line
    * @returns {Object} ImpressPresentation ImpressPresentation instance
    */
-  function ImpressPresentation(params, contentId) {
+  function ImpressPresentation(params, contentId, options) {
     var self = this;
 
     /**
@@ -70,6 +72,12 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
 
     // Extend default params
     self.params = $.extend(true, self.defaults, params);
+
+    // Initialization options
+    var defaultOptions = {
+      disableNavLine: false
+    };
+    self.options = $.extend(true, defaultOptions, options);
 
     /**
      * Default jmpress config
@@ -156,13 +164,45 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
       $(this).addClass('hide');
       self.$jmpress.focus();
       return false;
-    }).appendTo($container);
+    }).appendTo(self.$jmpress);
 
     self.initJmpress();
     self.route = self.params.viewsGroup.route ? self.params.viewsGroup.route : self.route;
     self.$jmpress.jmpress('goTo', self.route[0]);
+
+    if (!self.options.disableNavLine) {
+      self.createNavLine().appendTo($container);
+    }
+
     self.updateRoute();
     self.resize();
+  };
+
+  /**
+   * Create navigation buttons
+   */
+  ImpressPresentation.prototype.createNavLine = function () {
+    var self = this;
+
+    var $navLine = $('<div>', {
+      'class': 'h5p-impress-nav-line'
+    });
+
+    // Previous step
+    JoubelUI.createButton({
+      'class': 'h5p-impress-nav-button'
+    }).click(function () {
+      self.$jmpress.jmpress('prev');
+    }).appendTo($navLine);
+
+    // Next step
+    JoubelUI.createButton({
+      'class': 'h5p-impress-nav-button next'
+    }).click(function () {
+      self.$jmpress.jmpress('next');
+    }).appendTo($navLine);
+
+    return $navLine;
   };
 
   /**
@@ -365,4 +405,4 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step) {
 
   return ImpressPresentation;
 
-}(H5P.jQuery, H5P.EventDispatcher, H5P.ImpressPresentation.Step));
+}(H5P.jQuery, H5P.EventDispatcher, H5P.ImpressPresentation.Step, H5P.JoubelUI));
