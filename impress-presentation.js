@@ -391,8 +391,6 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
 
     // Update jmpress viewport
     var settings = self.$jmpress.jmpress('settings');
-    settings.viewPort.height = containerHeight;
-    settings.viewPort.width = containerWidth;
     settings.perspective = containerWidth / self.params.viewsGroup.perspectiveRatio;
 
     self.$jmpress.jmpress('reselect');

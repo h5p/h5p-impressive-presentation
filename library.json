@@ -5,6 +5,7 @@
   "minorVersion": 0,
   "patchVersion": 0,
   "runnable": 1,
+  "fullscreen": 1,
   "author": "Joubel AS",
   "license": "MIT",
   "machineName": "H5P.ImpressPresentation",

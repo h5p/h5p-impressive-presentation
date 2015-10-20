@@ -96,3 +96,7 @@
 .h5p-impress-presentation .h5p-impress-nav-button.next:before {
   content: '\f061';
 }
+
+.h5p-impress-presentation .h5p-content-controls {
+  z-index: 999;
+}
