@@ -6,7 +6,10 @@
   "patchVersion": 0,
   "runnable": 1,
   "fullscreen": 1,
-  "author": "Joubel AS",
+  "author": "Thomasmars",
+  "embedTypes": [
+    "iframe"
+  ],
   "license": "MIT",
   "machineName": "H5P.ImpressPresentation",
   "preloadedCss": [
