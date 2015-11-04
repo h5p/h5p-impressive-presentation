@@ -176,7 +176,8 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
       // Overlay to prevent clicks in editor.
       $('<div>', {
         'class': 'h5p-content-overlay'
-      }).click(function () {
+      }).click(function (event) {
+        event.stopPropagation();
         return false;
       }).appendTo($libraryContainer);
 
@@ -333,6 +334,7 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
       if ($libraryContainer) {
         $libraryContainer.detach();
       }
+
       if (params.action && params.action.library) {
 
         $libraryContainer = $('<div>', {
