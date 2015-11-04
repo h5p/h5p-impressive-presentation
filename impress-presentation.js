@@ -297,7 +297,12 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
    */
   ImpressPresentation.prototype.removeStep = function (stepId) {
     var self = this;
-    self.steps.splice(stepId, 1);
+    var stepIndex = self.steps.indexOf(self.getStep(stepId));
+    if (stepIndex < 0) {
+      H5P.error('Could not find step');
+      return;
+    }
+    self.steps.splice(stepIndex, 1);
     self.removeFromRoute(stepId);
     self.params.viewsGroup.views.splice(self.getStepParamsIndexById(stepId), 1);
     self.updateRoute();
