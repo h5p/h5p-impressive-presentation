@@ -364,6 +364,11 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
     }
   };
 
+  /**
+   * Remove step from route
+   *
+   * @param {Number} stepId
+   */
   ImpressPresentation.prototype.removeFromRoute = function (stepId) {
     var self = this;
     var elementId = self.createUniqueElementId(stepId);
@@ -371,6 +376,16 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
     if (routeIndex > -1) {
       self.route.splice(routeIndex, 1);
     }
+  };
+
+  /**
+   * Get route
+   *
+   * @returns {Array|*}
+   */
+  ImpressPresentation.prototype.getRoute = function () {
+    var self = this;
+    return self.route;
   };
 
   /**
