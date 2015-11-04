@@ -30,6 +30,23 @@
   display: none;
 }
 
+.h5p-impress-presentation .h5p-impress-error-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: red;
+  background: white;
+  z-index: 1;
+  text-align: center;
+}
+
+.h5p-impress-presentation .h5p-impress-error-overlay.hide {
+  display: none;
+}
+
 /* Standard view */
 .h5p-impress-presentation .h5p-standard-view {
   z-index: 1;

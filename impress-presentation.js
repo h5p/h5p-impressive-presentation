@@ -166,6 +166,13 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
       return false;
     }).appendTo(self.$jmpress);
 
+    /**
+     * Overlay for handling error messages.
+     */
+    self.$errorOverlay = $('<div>', {
+      'class': 'h5p-impress-error-overlay hide'
+    }).appendTo(self.$jmpress);
+
     self.initJmpress();
     self.route = self.params.viewsGroup.route ? self.params.viewsGroup.route : self.route;
     self.$jmpress.jmpress('goTo', self.route[0]);
@@ -289,6 +296,47 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
   };
 
   /**
+   * Create error message
+   *
+   * @param {string} message
+   */
+  ImpressPresentation.prototype.createErrorMessage = function (message) {
+    var self = this;
+
+    // Clear previous timeout
+    clearTimeout(self.errorDelay);
+    self.errorDelay = undefined;
+
+    // Set new error message, and show it
+    self.$errorOverlay.html(message)
+      .removeClass('hide');
+    self.$overlay.unbind('click.error')
+      .removeClass('hide');
+
+    // Remove error message after an interval.
+    self.errorDelay = setTimeout(function () {
+      removeErrorMessage();
+    }, ImpressPresentation.ERROR_TIMEOUT);
+
+    /**
+     * Remove error message
+     */
+    var removeErrorMessage = function () {
+      clearTimeout(self.errorDelay);
+      self.errorDelay = undefined;
+      self.$errorOverlay.html('')
+        .addClass('hide');
+      self.$overlay.unbind('click.error')
+        .addClass('hide');
+    };
+
+    // Register click to presentation overlay
+    self.$overlay.bind('click.error', function () {
+      removeErrorMessage();
+    });
+  };
+
+  /**
    * Add to navigation route
    * @param {Number} stepId
    * @param {Number} [insertAfterId] Element will be inserted after given id in route
@@ -352,6 +400,22 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
     return step;
   };
 
+  /**
+   * Get amount of steps.
+   *
+   * @returns {Number} Amount of steps
+   */
+  ImpressPresentation.prototype.getStepCount = function () {
+    var self = this;
+    return self.steps.length;
+  };
+
+  /**
+   * Create unique element ID
+   *
+   * @param {Number} uniqueId A unique id for constructing the string
+   * @returns {string} A unique string constructed from the unique id
+   */
   ImpressPresentation.prototype.createUniqueElementId = function (uniqueId) {
     return '#' + ImpressPresentation.ID_PREFIX + uniqueId;
   };
@@ -408,6 +472,8 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
     var self = this;
     self.$jmpress.focus();
   };
+
+  ImpressPresentation.ERROR_TIMEOUT = 1500;
 
   return ImpressPresentation;
 
