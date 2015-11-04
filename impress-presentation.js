@@ -125,6 +125,14 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
     self.on('resize', function () {
       self.resize();
     });
+
+    // Focus canvas on enter/exit full screen
+    self.on('enterFullScreen', function () {
+      self.refocusView();
+    });
+    self.on('exitFullScreen', function () {
+      self.refocusView();
+    });
   }
 
   /**

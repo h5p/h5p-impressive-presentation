@@ -1,5 +1,7 @@
-.h5p-impress-presentation {
+
+.h5p-container.h5p-standalone.h5p-impress-presentation {
   position: relative;
+  overflow: visible;
 }
 
 .h5p-impress-presentation .jmpress {
@@ -13,6 +15,12 @@
   -ms-transform:     translate3d(0,0,2px);
   -o-transform:      translate3d(0,0,2px);
   transform:         translate3d(0,0,2px);
+
+}
+
+.h5p-impress-presentation .jmpress:focus {
+  outline: 1px solid #6DA5FF;
+  outline-offset: 0;
 }
 
 /* focus handler */
