@@ -1,5 +1,6 @@
 
-.h5p-container.h5p-standalone.h5p-impress-presentation {
+.h5p-container.h5p-standalone.h5p-impress-presentation,
+.h5p-impress-presentation {
   position: relative;
   overflow: visible;
 }
