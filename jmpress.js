@@ -1653,7 +1653,11 @@
 		var jmpress = this;
 		eventData.current.viewPortNamespace = ".jmpress-"+randomString();
 		$(window).bind("resize"+eventData.current.viewPortNamespace, function (event) {
-			$(jmpress).jmpress("reselect", "resize");
+			try {
+				$(jmpress).jmpress("reselect", "resize");
+			}
+			catch (e) {
+			}
 		});
 		eventData.current.userZoom = 0;
 		eventData.current.userTranslateX = 0;
