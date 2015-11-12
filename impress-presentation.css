@@ -12,9 +12,7 @@
   position: relative;
   z-index: 10;
   -webkit-transform: translate3d(0,0,2px);
-  -moz-transform:    translate3d(0,0,2px);
   -ms-transform:     translate3d(0,0,2px);
-  -o-transform:      translate3d(0,0,2px);
   transform:         translate3d(0,0,2px);
 
 }
@@ -79,6 +77,8 @@
 .h5p-impress-presentation .h5p-impress-background img {
   position: relative;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   width: 100%;
   height: auto;
@@ -94,6 +94,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
