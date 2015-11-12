@@ -190,7 +190,7 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
     }
 
     self.updateRoute();
-    self.resize(true);
+    self.resize();
   };
 
   /**
@@ -475,9 +475,8 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
 
   /**
    * Resize perspective to new wrapper size.
-   * @param setViewPort
    */
-  ImpressPresentation.prototype.resize = function (setViewPort) {
+  ImpressPresentation.prototype.resize = function () {
     var self = this;
 
     // Fit viewport to available space
@@ -487,10 +486,6 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
 
     // Update jmpress viewport
     var settings = self.$jmpress.jmpress('settings');
-    if (setViewPort) {
-      self.$jmpress.jmpress('settings').viewPort.width = containerWidth;
-      self.$jmpress.jmpress('settings').viewPort.height = containerHeight;
-    }
     settings.perspective = containerWidth / self.params.viewsGroup.perspectiveRatio;
 
     self.$jmpress.jmpress('reselect');

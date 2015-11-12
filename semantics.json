@@ -85,7 +85,7 @@
                   "name": "transparentBackground",
                   "type": "boolean",
                   "label": "Transparent Background",
-                  "description": "Uncheck to choose background color",
+                  "description": "Uncheck to choose background color or image",
                   "default": true
                 },
                 {
