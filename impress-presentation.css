@@ -65,6 +65,11 @@
   text-align: center;
 }
 
+.h5p-impress-presentation .h5p-standard-view.h5p-center-view .h5p-advanced-text {
+  text-align: initial;
+}
+
+
 /* Background and images */
 .h5p-impress-presentation .h5p-impress-background {
   position: absolute;
