@@ -134,4 +134,7 @@
 
 .h5p-impress-presentation .h5p-content-controls {
   z-index: 999;
+  -webkit-transform: translate3d(0,0, 999999px);
+  -ms-transform: translate3d(0,0, 999999px);
+  transform: translate3d(0,0, 99999px);
 }
