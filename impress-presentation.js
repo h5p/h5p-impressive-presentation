@@ -101,7 +101,8 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
       canvasClass: 'jmpress-canvas',
       areaClass: 'jmpress-area-camera',
       fullscreen: false,
-      hash: { use: false}
+      hash: { use: false},
+      transitionDuration: 1500
     };
 
     /**
@@ -189,6 +190,7 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
       self.createNavLine().appendTo($container);
     }
 
+    self.setActivityStarted();
     self.updateRoute();
     self.resize();
   };
@@ -271,8 +273,8 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
     singleStepParams.ordering.uniqueId = self.idCounter;
 
     // Create object
-    var step = new Step(self.idCounter, singleStepParams)
-      .init()
+    var step = new Step(self.idCounter, singleStepParams, self.contentId)
+      .init(self.jmpressConfig.transitionDuration)
       .setBackground(this.contentId)
       .appendTo($stepContainer);
 

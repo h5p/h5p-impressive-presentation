@@ -13,7 +13,7 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
    * @param params
    * @returns {H5P.ImpressPresentation.Step}
    */
-  function Step(idCounter, params) {
+  function Step(idCounter, params, contentId) {
     var self = this;
 
     /**
@@ -52,6 +52,11 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
     var $backgroundForm;
 
     /**
+     * Transition duration
+     */
+    var transitionDuration = 0;
+
+    /**
      * Keep track of semantics
      * @type {Array}
      */
@@ -64,8 +69,11 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
 
     /**
      * Initialize step
+     * @param {Number} [transitionTime] Optional transition duration before resizing library
      */
-    self.init = function () {
+    self.init = function (transitionTime) {
+      transitionDuration = transitionTime;
+
       createElement();
       createLibrary();
 
@@ -324,6 +332,14 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
         'data-rotate-y': params.positioning.rotateY,
         'data-rotate-z': params.positioning.rotateZ,
         'data-exclude': !params.ordering.includeInPath
+      }).on('enterStep', function () {
+
+        // Resize library after transition for correct measurements
+        if (library.trigger) {
+          setTimeout(function () {
+            library.trigger('resize');
+          }, transitionDuration);
+        }
       });
     };
 
@@ -341,7 +357,7 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
           'class': 'h5p-impress-content'
         }).appendTo($element);
 
-        library = new H5P.newRunnable(params.action, self.contentId, $libraryContainer);
+        library = new H5P.newRunnable(params.action, contentId, $libraryContainer);
 
         self.trigger('createdLibraryElement', $libraryContainer);
       }
