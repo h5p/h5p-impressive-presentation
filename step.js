@@ -74,8 +74,8 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
     self.init = function (transitionTime) {
       transitionDuration = transitionTime;
 
-      createElement();
       createLibrary();
+      createElement();
 
       return self;
     };
@@ -335,7 +335,7 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
       }).on('enterStep', function () {
 
         // Resize library after transition for correct measurements
-        if (library.trigger) {
+        if (library && library.trigger) {
           setTimeout(function () {
             library.trigger('resize');
           }, transitionDuration);

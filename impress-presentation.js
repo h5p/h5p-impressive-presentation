@@ -190,7 +190,9 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
       self.createNavLine().appendTo($container);
     }
 
-    self.setActivityStarted();
+    if (self.contentId) {
+      self.setActivityStarted();
+    }
     self.updateRoute();
     self.resize();
   };
