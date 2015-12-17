@@ -74,8 +74,8 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
     self.init = function (transitionTime) {
       transitionDuration = transitionTime;
 
-      createLibrary();
       createElement();
+      createLibrary();
 
       return self;
     };
