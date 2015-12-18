@@ -140,6 +140,18 @@
 }
 
 /* Content type specifics */
+.h5p-center-view .h5p-question-image {
+  text-align: center;
+}
+
+.h5p-center-view .h5p-question-image-wrap {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
 .h5p-impress-content.h5p-question.h5p-single-choice-set {
   min-width: 25em;
 }
