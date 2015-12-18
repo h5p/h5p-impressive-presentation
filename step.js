@@ -358,7 +358,9 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
         }).appendTo($element);
 
         library = new H5P.newRunnable(params.action, contentId, $libraryContainer);
-        library.trigger('resize');
+        setTimeout(function () {
+          library.trigger('resize');
+        }, 1);
 
         self.trigger('createdLibraryElement', $libraryContainer);
       }
