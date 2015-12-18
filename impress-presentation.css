@@ -138,3 +138,13 @@
   -ms-transform: translate3d(0,0, 999999px);
   transform: translate3d(0,0, 99999px);
 }
+
+/* Content type specifics */
+.h5p-impress-content.h5p-question.h5p-single-choice-set {
+  min-width: 25em;
+}
+
+.h5p-impress-content.h5p-question.h5p-blanks {
+  max-height: 22em;
+  overflow-y: auto;
+}
