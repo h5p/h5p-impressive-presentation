@@ -91,11 +91,12 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
       keyboard: {
         keys: {
           37: 'prev',
-          39: 'next',
-          49: 'zoomin',
-          50: 'zoomout'
+          39: 'next'
         },
         use: true
+      },
+      mouse: {
+        clickSelects: false
       },
       containerClass: 'jmpress-container',
       canvasClass: 'jmpress-canvas',
@@ -162,6 +163,10 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
     self.$jmpress = $('<article class="jmpress" tabindex="0"></article>');
     self.processSteps(self.params.viewsGroup.views);
     self.$jmpress.appendTo(self.$inner);
+
+    // Necessary to make scroll events propagate
+    self.$jmpress.on('wheel', function (e) {
+    });
 
     /**
      * Overlay for handling focus.
