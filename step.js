@@ -85,10 +85,11 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
      */
     self.setBackground = function (contentId) {
       // Skip transparent steps
+      if ($backgroundContainer) {
+        $backgroundContainer.detach();
+      }
+
       if (params.backgroundGroup.transparentBackground) {
-        if ($backgroundContainer) {
-          $backgroundContainer.detach();
-        }
         return self;
       }
 
