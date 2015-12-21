@@ -86,7 +86,8 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
       stepSelector: 'section',
       viewPort: {
         height: self.defaultParams.viewPortHeight,
-        width: self.defaultParams.viewPortWidth
+        width: self.defaultParams.viewPortWidth,
+        zoomBindWheel: false
       },
       keyboard: {
         keys: {
@@ -163,10 +164,6 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
     self.$jmpress = $('<article class="jmpress" tabindex="0"></article>');
     self.processSteps(self.params.viewsGroup.views);
     self.$jmpress.appendTo(self.$inner);
-
-    // Necessary to make scroll events propagate
-    self.$jmpress.on('wheel', function (e) {
-    });
 
     /**
      * Overlay for handling focus.
