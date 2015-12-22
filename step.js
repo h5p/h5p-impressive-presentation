@@ -76,6 +76,7 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
 
       createElement();
       createLibrary();
+      self.setBackgroundSize();
 
       return self;
     };
