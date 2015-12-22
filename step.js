@@ -341,6 +341,9 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
         if (library && library.trigger) {
           setTimeout(function () {
             library.trigger('resize');
+
+            // Question buttons are not initialized with enough height because of transforms.
+            $libraryContainer.find('.h5p-question-buttons').css('max-height', '');
           }, transitionDuration);
         }
       });
