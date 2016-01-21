@@ -86,22 +86,25 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
       stepSelector: 'section',
       viewPort: {
         height: self.defaultParams.viewPortHeight,
-        width: self.defaultParams.viewPortWidth
+        width: self.defaultParams.viewPortWidth,
+        zoomBindWheel: false
       },
       keyboard: {
         keys: {
           37: 'prev',
-          39: 'next',
-          49: 'zoomin',
-          50: 'zoomout'
+          39: 'next'
         },
         use: true
+      },
+      mouse: {
+        clickSelects: false
       },
       containerClass: 'jmpress-container',
       canvasClass: 'jmpress-canvas',
       areaClass: 'jmpress-area-camera',
       fullscreen: false,
-      hash: { use: false}
+      hash: { use: false},
+      transitionDuration: 1500
     };
 
     /**
@@ -189,6 +192,9 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
       self.createNavLine().appendTo($container);
     }
 
+    if (self.contentId) {
+      self.setActivityStarted();
+    }
     self.updateRoute();
     self.resize();
   };
@@ -271,8 +277,8 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
     singleStepParams.ordering.uniqueId = self.idCounter;
 
     // Create object
-    var step = new Step(self.idCounter, singleStepParams)
-      .init()
+    var step = new Step(self.idCounter, singleStepParams, self.contentId)
+      .init(self.jmpressConfig.transitionDuration)
       .setBackground(this.contentId)
       .appendTo($stepContainer);
 
