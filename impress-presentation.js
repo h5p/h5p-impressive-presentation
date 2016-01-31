@@ -200,6 +200,16 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
   };
 
   /**
+   * Go to step with specified id
+   * @param {number} stepId Unique numeric id of step
+   */
+  ImpressPresentation.prototype.goToStepId = function (stepId) {
+    this.$jmpress.jmpress('goTo', '#' + H5P.ImpressPresentation.ID_PREFIX + stepId);
+
+    return this;
+  };
+
+  /**
    * Create navigation buttons
    */
   ImpressPresentation.prototype.createNavLine = function () {
@@ -413,6 +423,8 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
   ImpressPresentation.prototype.updateRoute = function () {
     var self = this;
     self.$jmpress.jmpress('route', $.merge($.merge([self.route[self.route.length - 1]], self.route), [self.route[0]]));
+
+    return this;
   };
 
   /**

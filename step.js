@@ -11,6 +11,7 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
    * Step helper class for keeping track of step data
    * @param idCounter
    * @param params
+   * @param contentId Content id of step
    * @returns {H5P.ImpressPresentation.Step}
    */
   function Step(idCounter, params, contentId) {
@@ -135,21 +136,21 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
 
     /**
      * Activate step dynamically for $jmpress element
-     * @param {Object} jmpress
+     * @param {jQuery} [$jmpress]
      */
-    self.activateStep = function (jmpress) {
-      jmpress.jmpress('canvas').append($element);
-      jmpress.jmpress('init', $element);
+    self.activateStep = function ($jmpress) {
+      $jmpress.jmpress('canvas').append($element);
+      $jmpress.jmpress('init', $element);
 
       return self;
     };
 
     /**
      * Deactivate and remove step dynamically.
-     * @param {Object} jmpress
+     * @param {jQuery} $jmpress
      */
-    self.removeStep = function (jmpress) {
-      jmpress.jmpress('deinit', $element);
+    self.removeStep = function ($jmpress) {
+      $jmpress.jmpress('deinit', $element);
       $element.remove();
     };
 
