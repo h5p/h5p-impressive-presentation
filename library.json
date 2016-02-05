@@ -3,7 +3,7 @@
   "description": "Impressive Presentation tool.",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 3,
+  "patchVersion": 4,
   "runnable": 1,
   "fullscreen": 1,
   "author": "Thomasmars",
@@ -37,7 +37,7 @@
     {
       "machineName": "FontAwesome",
       "majorVersion": 4,
-      "minorVersion": 3
+      "minorVersion": 5
     }
   ],
   "editorDependencies": [
