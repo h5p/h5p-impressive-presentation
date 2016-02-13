@@ -210,6 +210,15 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
   };
 
   /**
+   * Got to step
+   *
+   * @param {H5P.ImpressPresentation.Step} step
+   */
+  ImpressPresentation.prototype.goToStep = function (step) {
+    this.$jmpress.jmpress('goTo', '#' + H5P.ImpressPresentation.ID_PREFIX + step.getId());
+  };
+
+  /**
    * Create navigation buttons
    */
   ImpressPresentation.prototype.createNavLine = function () {
