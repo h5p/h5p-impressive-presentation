@@ -57,6 +57,8 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
      */
     var transitionDuration = 0;
 
+    var isOverviewStep = false;
+
     /**
      * Keep track of semantics
      * @type {Array}
@@ -80,6 +82,21 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
       self.setBackgroundSize();
 
       return self;
+    };
+
+    /**
+     *
+     * @param [isOverview]
+     * @returns {boolean|H5P.ImpressPresentation.Step}
+     */
+    self.isOverviewStep = function (isOverview) {
+      if (isOverview !== undefined) {
+        isOverviewStep = isOverview;
+        return self;
+      }
+      else {
+        return isOverviewStep;
+      }
     };
 
     /**

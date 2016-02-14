@@ -269,14 +269,17 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
   /**
    * Create view and append it to wrapper.
    * @param {Object} singleStepParams
-   * @param {Boolean} [addToParams]
-   * @param {Number} [afterIndex]
+   * @param {Object} [options]
+   * @param {Boolean} [options.isOverview]
+   * @param {Boolean} [options.addToParams]
+   * @param {Number} [options.afterIndex]
    * @returns {Step} step
    */
-  ImpressPresentation.prototype.createStep = function (singleStepParams, addToParams, afterIndex) {
+  ImpressPresentation.prototype.createStep = function (singleStepParams, options) {
     var self = this;
 
-    addToParams = addToParams ? addToParams : false;
+    options = options || {};
+    options.addToParams = options.addToParams || false;
 
     var $stepContainer = self.$jmpress;
     if (self.$jmpress.jmpress('initialized')) {
@@ -301,17 +304,16 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
       .setBackground(this.contentId)
       .appendTo($stepContainer);
 
-    if (addToParams) {
+    if (options.addToParams) {
       self.params.viewsGroup.views.push(singleStepParams);
     }
 
     if (singleStepParams.ordering.includeInPath) {
-      self.addToRoute(step.getId(), afterIndex);
+      self.addToRoute(step.getId(), options.afterIndex);
     }
 
     self.steps.push(step);
     self.idCounter += 1;
-
     self.trigger('createdStep', step);
 
     return step;
@@ -432,7 +434,11 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
    */
   ImpressPresentation.prototype.updateRoute = function () {
     var self = this;
-    self.$jmpress.jmpress('route', $.merge($.merge([self.route[self.route.length - 1]], self.route), [self.route[0]]));
+
+    // Make route loop around
+    var lastElementFirst = $.merge([self.route[self.route.length - 1]], self.route);
+
+    self.$jmpress.jmpress('route', lastElementFirst);
 
     return this;
   };
