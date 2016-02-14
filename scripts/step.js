@@ -113,6 +113,8 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
         $backgroundContainer.css('background-color', '#' + params.backgroundGroup.backgroundColor);
       }
 
+      self.trigger('changedBackground');
+
       return self;
     };
 

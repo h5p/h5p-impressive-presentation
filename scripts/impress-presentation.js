@@ -301,7 +301,6 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
       .setBackground(this.contentId)
       .appendTo($stepContainer);
 
-    self.trigger('createdStep', step);
     if (addToParams) {
       self.params.viewsGroup.views.push(singleStepParams);
     }
@@ -312,6 +311,8 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
 
     self.steps.push(step);
     self.idCounter += 1;
+
+    self.trigger('createdStep', step);
 
     return step;
   };
