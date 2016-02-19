@@ -270,7 +270,6 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
    * Create view and append it to wrapper.
    * @param {Object} singleStepParams
    * @param {Object} [options]
-   * @param {Boolean} [options.isOverview]
    * @param {Boolean} [options.addToParams]
    * @param {Number} [options.afterIndex]
    * @returns {Step} step
@@ -525,9 +524,11 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
     self.$jmpress.jmpress('reselect');
   };
 
+  /**
+   * Refocus view
+   */
   ImpressPresentation.prototype.refocusView = function () {
-    var self = this;
-    self.$jmpress.focus();
+    this.$jmpress.focus();
   };
 
   ImpressPresentation.ERROR_TIMEOUT = 1500;
