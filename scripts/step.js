@@ -200,6 +200,17 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
     };
 
     /**
+     * Update prop for step
+     *
+     * @param {string} prop Property
+     * @param {number} value Value
+     */
+    self.updateStepProp = function (prop, value) {
+      params.positioning[prop] = value;
+      $element.data('stepData')[prop] = value;
+    };
+
+    /**
      * Update element. Used when params are changed.
      */
     self.updateLibrary = function () {
