@@ -324,6 +324,18 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
     };
 
     /**
+     * Add/remove editing visuals
+     *
+     * @param {boolean} enableEditing True to show visuals
+     * @returns {H5P.ImpressPresentation.Step}
+     */
+    self.setEditing = function (enableEditing) {
+      $element.toggleClass('editing-step', enableEditing);
+
+      return this;
+    };
+
+    /**
      * Append step section to wrapper
      * @param {jQuery} $wrapper
      */
