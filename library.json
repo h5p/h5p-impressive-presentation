@@ -2,8 +2,8 @@
   "title": "Impressive Presentation",
   "description": "Impressive Presentation tool.",
   "majorVersion": 1,
-  "minorVersion": 0,
-  "patchVersion": 2,
+  "minorVersion": 1,
+  "patchVersion": 0,
   "runnable": 1,
   "fullscreen": 1,
   "author": "Thomasmars",
@@ -44,7 +44,7 @@
     {
       "machineName": "H5PEditor.ImpressPresentation",
       "majorVersion": 1,
-      "minorVersion": 0
+      "minorVersion": 1
     },
     {
       "machineName": "H5PEditor.ColorSelector",
