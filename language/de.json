@@ -1,0 +1,94 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Ansichten erstellen",
+          "description": "Hier können Ansichten mit verschiedenen Übergängen und Texten erstellt werden.",
+          "field": {
+            "label": "Instanz ansehen",
+            "fields": [
+              {
+                "options": [
+                ],
+              },
+              {
+                "fields": [
+                  {
+                    "label": "mittiger Text",
+                  },
+                  {
+                    "label": "X Position",
+                  },
+                  {
+                    "label": "Y Position",
+                  },
+                  {
+                    "label": "Z Position",
+                    "description": "Negative Werte sind weiter entfernt von der Kamera und positive Werte sind näher.",
+                  },
+                  {
+                    "label": "X Rotation",
+                    "description": "Die Standardrotation ist 0.",
+                  },
+                  {
+                    "label": "Y Rotation",
+                    "description": "Die Standardrotation ist 0.",
+                  },
+                  {
+                    "label": "Z Rotation",
+                    "description": "Die Standardrotation ist 0.",
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Transparenter Hintergrund",
+                    "description": "Auswahl aufheben um Hintergrundfarbe oder Bild zu wählen.",
+                  },
+                  {
+                    "spectrum": {
+                    },
+                    "label": "Hintergrundfarbe",
+                    "description": "Optional, bei diesem Schritt kann eine Hintergrundfarbe eingestellt werden",
+                    "default": "fff",
+                  },
+                  {
+                    "label": "Hintergrundbild",
+                  },
+                  {
+                    "label": "Hintergrundbreite",
+                  },
+                  {
+                    "label": "Hintergrundhöhe",
+                  }
+                ]
+              },
+              {
+                "label": "Bestellen",
+                "fields": [
+                  {
+                    "label": "Schritt im Pfad einschließen",
+                  },
+                  {
+                    "label": "Index im Pfad",
+                  },
+                  {
+                    "label": "Benutzerdefinierter Name",
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Perspektivenverhältnis",
+        },
+        {
+          "label": "Routenpfad",
+          "fields": []
+        }
+      ]
+    }
+  ]
