@@ -19,13 +19,13 @@
   ],
   "preloadedJs": [
     {
-      "path": "jmpress.js"
+      "path": "scripts/jmpress.js"
     },
     {
-      "path": "step.js"
+      "path": "scripts/step.js"
     },
     {
-      "path": "impress-presentation.js"
+      "path": "scripts/impress-presentation.js"
     }
   ],
   "preloadedDependencies": [
