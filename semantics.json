@@ -98,7 +98,7 @@
                   "type": "text",
                   "label": "Background color",
                   "description": "Optional, can be set to have a background color for this step",
-                  "default": "fff",
+                  "default": "#fff",
                   "optional": true
                 },
                 {

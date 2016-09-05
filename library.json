@@ -2,7 +2,7 @@
   "title": "Impressive Presentation",
   "description": "Impressive Presentation tool.",
   "majorVersion": 1,
-  "minorVersion": 1,
+  "minorVersion": 2,
   "patchVersion": 0,
   "runnable": 1,
   "fullscreen": 1,
@@ -44,12 +44,12 @@
     {
       "machineName": "H5PEditor.ImpressPresentation",
       "majorVersion": 1,
-      "minorVersion": 1
+      "minorVersion": 2
     },
     {
       "machineName": "H5PEditor.ColorSelector",
       "majorVersion": 1,
-      "minorVersion": 0
+      "minorVersion": 1
     }
   ]
 }

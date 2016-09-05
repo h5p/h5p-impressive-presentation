@@ -35,7 +35,7 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
       action: {},
       backgroundGroup: {
         transparentBackground: true,
-        backgroundColor: 'fff',
+        backgroundColor: '#fff',
         backgroundWidth: 640,
         backgroundHeight: 360
       },
