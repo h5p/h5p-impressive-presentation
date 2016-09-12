@@ -2,8 +2,8 @@
   "title": "Impressive Presentation",
   "description": "Impressive Presentation tool.",
   "majorVersion": 1,
-  "minorVersion": 0,
-  "patchVersion": 4,
+  "minorVersion": 2,
+  "patchVersion": 0,
   "runnable": 1,
   "fullscreen": 1,
   "author": "Thomasmars",
@@ -19,13 +19,13 @@
   ],
   "preloadedJs": [
     {
-      "path": "jmpress.js"
+      "path": "scripts/jmpress.js"
     },
     {
-      "path": "step.js"
+      "path": "scripts/step.js"
     },
     {
-      "path": "impress-presentation.js"
+      "path": "scripts/impress-presentation.js"
     }
   ],
   "preloadedDependencies": [
@@ -44,12 +44,12 @@
     {
       "machineName": "H5PEditor.ImpressPresentation",
       "majorVersion": 1,
-      "minorVersion": 0
+      "minorVersion": 2
     },
     {
       "machineName": "H5PEditor.ColorSelector",
       "majorVersion": 1,
-      "minorVersion": 0
+      "minorVersion": 1
     }
   ]
 }
