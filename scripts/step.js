@@ -11,6 +11,7 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
    * Step helper class for keeping track of step data
    * @param idCounter
    * @param params
+   * @param contentId Content id of step
    * @returns {H5P.ImpressPresentation.Step}
    */
   function Step(idCounter, params, contentId) {
@@ -109,8 +110,10 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
       }
 
       if (params.backgroundGroup.backgroundColor) {
-        $backgroundContainer.css('background-color', '#' + params.backgroundGroup.backgroundColor);
+        $backgroundContainer.css('background-color', params.backgroundGroup.backgroundColor);
       }
+
+      self.trigger('changedBackground');
 
       return self;
     };
@@ -135,21 +138,21 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
 
     /**
      * Activate step dynamically for $jmpress element
-     * @param {Object} jmpress
+     * @param {jQuery} [$jmpress]
      */
-    self.activateStep = function (jmpress) {
-      jmpress.jmpress('canvas').append($element);
-      jmpress.jmpress('init', $element);
+    self.activateStep = function ($jmpress) {
+      $jmpress.jmpress('canvas').append($element);
+      $jmpress.jmpress('init', $element);
 
       return self;
     };
 
     /**
      * Deactivate and remove step dynamically.
-     * @param {Object} jmpress
+     * @param {jQuery} $jmpress
      */
-    self.removeStep = function (jmpress) {
-      jmpress.jmpress('deinit', $element);
+    self.removeStep = function ($jmpress) {
+      $jmpress.jmpress('deinit', $element);
       $element.remove();
     };
 
@@ -194,6 +197,17 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
       }).appendTo($libraryContainer);
 
       return self;
+    };
+
+    /**
+     * Update prop for step
+     *
+     * @param {string} prop Property
+     * @param {number} value Value
+     */
+    self.updateStepProp = function (prop, value) {
+      params.positioning[prop] = value;
+      $element.data('stepData')[prop] = value;
     };
 
     /**
@@ -307,6 +321,18 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
      */
     self.setRouteState = function (includeInPath) {
       params.ordering.includeInPath = includeInPath;
+    };
+
+    /**
+     * Add/remove editing visuals
+     *
+     * @param {boolean} enableEditing True to show visuals
+     * @returns {H5P.ImpressPresentation.Step}
+     */
+    self.setEditing = function (enableEditing) {
+      $element.toggleClass('editing-step', enableEditing);
+
+      return this;
     };
 
     /**

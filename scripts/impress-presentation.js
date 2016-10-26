@@ -35,7 +35,7 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
       action: {},
       backgroundGroup: {
         transparentBackground: true,
-        backgroundColor: 'fff',
+        backgroundColor: '#fff',
         backgroundWidth: 640,
         backgroundHeight: 360
       },
@@ -200,6 +200,25 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
   };
 
   /**
+   * Go to step with specified id
+   * @param {number} stepId Unique numeric id of step
+   */
+  ImpressPresentation.prototype.goToStepId = function (stepId) {
+    this.$jmpress.jmpress('goTo', '#' + H5P.ImpressPresentation.ID_PREFIX + stepId);
+
+    return this;
+  };
+
+  /**
+   * Got to step
+   *
+   * @param {H5P.ImpressPresentation.Step} step
+   */
+  ImpressPresentation.prototype.goToStep = function (step) {
+    this.$jmpress.jmpress('goTo', '#' + H5P.ImpressPresentation.ID_PREFIX + step.getId());
+  };
+
+  /**
    * Create navigation buttons
    */
   ImpressPresentation.prototype.createNavLine = function () {
@@ -250,14 +269,16 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
   /**
    * Create view and append it to wrapper.
    * @param {Object} singleStepParams
-   * @param {Boolean} [addToParams]
-   * @param {Number} [afterIndex]
+   * @param {Object} [options]
+   * @param {Boolean} [options.addToParams]
+   * @param {Number} [options.afterIndex]
    * @returns {Step} step
    */
-  ImpressPresentation.prototype.createStep = function (singleStepParams, addToParams, afterIndex) {
+  ImpressPresentation.prototype.createStep = function (singleStepParams, options) {
     var self = this;
 
-    addToParams = addToParams ? addToParams : false;
+    options = options || {};
+    options.addToParams = options.addToParams || false;
 
     var $stepContainer = self.$jmpress;
     if (self.$jmpress.jmpress('initialized')) {
@@ -282,17 +303,17 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
       .setBackground(this.contentId)
       .appendTo($stepContainer);
 
-    self.trigger('createdStep', step);
-    if (addToParams) {
+    if (options.addToParams) {
       self.params.viewsGroup.views.push(singleStepParams);
     }
 
     if (singleStepParams.ordering.includeInPath) {
-      self.addToRoute(step.getId(), afterIndex);
+      self.addToRoute(step.getId(), options.afterIndex);
     }
 
     self.steps.push(step);
     self.idCounter += 1;
+    self.trigger('createdStep', step);
 
     return step;
   };
@@ -412,7 +433,13 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
    */
   ImpressPresentation.prototype.updateRoute = function () {
     var self = this;
-    self.$jmpress.jmpress('route', $.merge($.merge([self.route[self.route.length - 1]], self.route), [self.route[0]]));
+
+    // Make route loop around
+    var lastElementFirst = $.merge([self.route[self.route.length - 1]], self.route);
+
+    self.$jmpress.jmpress('route', lastElementFirst);
+
+    return this;
   };
 
   /**
@@ -497,9 +524,11 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
     self.$jmpress.jmpress('reselect');
   };
 
+  /**
+   * Refocus view
+   */
   ImpressPresentation.prototype.refocusView = function () {
-    var self = this;
-    self.$jmpress.focus();
+    this.$jmpress.focus();
   };
 
   ImpressPresentation.ERROR_TIMEOUT = 1500;
