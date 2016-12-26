@@ -1,0 +1,103 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Erstelle Ansichten",
+          "description": "Hier kannst du Ansichten mit verschiedenen Übergängen erstellen.",
+          "entity": "option",
+          "field": {
+            "label": "Instanz ansehen",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "Text zentrieren",
+                    "default": true
+                  },
+                  {
+                    "label": "X-Position",
+                    "default": 0
+                  },
+                  {
+                    "label": "Y-Position",
+                    "default": 0
+                  },
+                  {
+                    "label": "Z-Position",
+                    "description": "Negative Werte sind weiter weg von der Kamera und positive näher.",
+                    "default": 0
+                  },
+                  {
+                    "label": "X-Rotation",
+                    "description": "Standard-Rotation ist 0.",
+                    "default": 0
+                  },
+                  {
+                    "label": "Y-Rotation",
+                    "description": "Standard-Rotation ist 0.",
+                    "default": 0
+                  },
+                  {
+                    "label": "Z-Rotation",
+                    "description": "Standard-Rotation ist 0.",
+                    "default": 0
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Transparenter Hintergrund",
+                    "description": "Abwählen, um eine Farbe oder ein Bild als Hintergrund zu wählen",
+                    "default": true
+                  },
+                  {
+                    "spectrum": {},
+                    "label": "Hintergrundfarbe",
+                    "description": "Optional, kann gesetzt werden, um für diesen Schritt eine Farbe zu wählen",
+                    "default": "#fff"
+                  },
+                  {
+                    "label": "Hintergrundbild"
+                  },
+                  {
+                    "label": "Breite des Hintergrundbildes",
+                    "default": 640
+                  },
+                  {
+                    "label": "Höhe des Hintergrundbildes",
+                    "default": 360
+                  }
+                ]
+              },
+              {
+                "label": "Reihenfolge",
+                "fields": [
+                  {
+                    "label": "Den Schritt in den Pfad integrieren",
+                    "default": true
+                  },
+                  {
+                    "label": "Stelle im Pfad"
+                  },
+                  {
+                    "label": "vom Nutzer definierter Name"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Perspektivenverhältnis",
+          "default": 1
+        },
+        {
+          "label": "Route für den Pfad"
+        }
+      ]
+    }
+  ]
+}
