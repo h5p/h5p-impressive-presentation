@@ -13,36 +13,29 @@
               {
                 "fields": [
                   {
-                    "label": "Text zentrieren",
-                    "default": true
+                    "label": "Text zentrieren"
                   },
                   {
-                    "label": "X-Position",
-                    "default": 0
+                    "label": "X-Position"
                   },
                   {
-                    "label": "Y-Position",
-                    "default": 0
+                    "label": "Y-Position"
                   },
                   {
                     "label": "Z-Position",
-                    "description": "Negative Werte sind weiter weg von der Kamera und positive näher.",
-                    "default": 0
+                    "description": "Negative Werte sind weiter weg von der Kamera und positive näher."
                   },
                   {
                     "label": "X-Rotation",
-                    "description": "Standard-Rotation ist 0.",
-                    "default": 0
+                    "description": "Standard-Rotation ist 0."
                   },
                   {
                     "label": "Y-Rotation",
-                    "description": "Standard-Rotation ist 0.",
-                    "default": 0
+                    "description": "Standard-Rotation ist 0."
                   },
                   {
                     "label": "Z-Rotation",
-                    "description": "Standard-Rotation ist 0.",
-                    "default": 0
+                    "description": "Standard-Rotation ist 0."
                   }
                 ]
               },
@@ -50,25 +43,21 @@
                 "fields": [
                   {
                     "label": "Transparenter Hintergrund",
-                    "description": "Abwählen, um eine Farbe oder ein Bild als Hintergrund zu wählen",
-                    "default": true
+                    "description": "Abwählen, um eine Farbe oder ein Bild als Hintergrund zu wählen"
                   },
                   {
                     "spectrum": {},
                     "label": "Hintergrundfarbe",
-                    "description": "Optional, kann gesetzt werden, um für diesen Schritt eine Farbe zu wählen",
-                    "default": "#fff"
+                    "description": "Optional, kann gesetzt werden, um für diesen Schritt eine Farbe zu wählen"
                   },
                   {
                     "label": "Hintergrundbild"
                   },
                   {
-                    "label": "Breite des Hintergrundbildes",
-                    "default": 640
+                    "label": "Breite des Hintergrundbildes"
                   },
                   {
-                    "label": "Höhe des Hintergrundbildes",
-                    "default": 360
+                    "label": "Höhe des Hintergrundbildes"
                   }
                 ]
               },
@@ -76,8 +65,7 @@
                 "label": "Reihenfolge",
                 "fields": [
                   {
-                    "label": "Den Schritt in den Pfad integrieren",
-                    "default": true
+                    "label": "Den Schritt in den Pfad integrieren"
                   },
                   {
                     "label": "Stelle im Pfad"
@@ -91,8 +79,7 @@
           }
         },
         {
-          "label": "Perspektivenverhältnis",
-          "default": 1
+          "label": "Perspektivenverhältnis"
         },
         {
           "label": "Route für den Pfad"
