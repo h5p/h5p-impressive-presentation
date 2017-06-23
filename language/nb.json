@@ -52,8 +52,7 @@
                       
                     },
                     "label":"Bakgrunnsfarge",
-                    "description":"Valgri. Kan settes for å gi en bakgrunnsfarge til lag",
-                    "default":"#fff"
+                    "description":"Valgri. Kan settes for å gi en bakgrunnsfarge til lag"
                   },
                   {
                     "label":"Bakgrunnsbilde"
