@@ -3,53 +3,38 @@
     {
       "fields": [
         {
-          "englishLabel": "Create views",
           "label": "Napravi preglede",
-          "englishDescription": "Here you can create views with different transitions and text.",
           "description": "Ovdje možete praviti preglede sa različitim tranzicijama i tekstom.",
-          "englishEntity": "option",
           "entity": "alternativ",
           "field": {
-            "englishLabel": "View instance",
             "label": "Pogledaj primjer",
             "fields": [
               {},
               {
                 "fields": [
                   {
-                    "englishLabel": "center text",
                     "label": "centriraj tekst"
                   },
                   {
-                    "englishLabel": "X position",
                     "label": "X pozicija"
                   },
                   {
-                    "englishLabel": "Y position",
                     "label": "Y pozicija"
                   },
                   {
-                    "englishLabel": "Z position",
                     "label": "Z pozicija",
-                    "englishDescription": "Negative values are further away from the camera and positive values are closer.",
                     "description": "Negativne vrijednosti su dalje od kamere, a pozitivne su bliže."
                   },
                   {
-                    "englishLabel": "X rotation",
                     "label": "X rotacija",
-                    "englishDescription": "Default rotation is 0.",
                     "description": "Zadana rotacija je 0."
                   },
                   {
-                    "englishLabel": "Y rotation",
                     "label": "Y rotacija",
-                    "englishDescription": "Default rotation is 0.",
                     "description": "Zadana rotacija je 0."
                   },
                   {
-                    "englishLabel": "Z rotation",
                     "label": "Z rotacija",
-                    "englishDescription": "Default rotation is 0.",
                     "description": "Zadana rotacija je 0."
                   }
                 ]
@@ -57,47 +42,36 @@
               {
                 "fields": [
                   {
-                    "englishLabel": "Transparent Background",
                     "label": "Transparentna pozadina",
-                    "englishDescription": "Uncheck to choose background color or image",
                     "description": "Odznačite kako bi odabrali boju pozadine i sliku"
                   },
                   {
-                    "englishLabel": "Background color",
                     "label": "Boja pozadine",
-                    "englishDescription": "Optional, can be set to have a background color for this step",
                     "description": "Opcionalno se može odrediti da se odredi boja pozadine za ovaj korak",
                     "englishDefault": "#fff",
                     "default": "#fff"
                   },
                   {
-                    "englishLabel": "Background image",
                     "label": "Slika pozadine"
                   },
                   {
-                    "englishLabel": "Background width",
                     "label": "Širina pozadine"
                   },
                   {
-                    "englishLabel": "Background height",
                     "label": "Visina pozadine"
                   }
                 ]
               },
               {
-                "englishLabel": "Ordering",
                 "label": "Redoslijed",
                 "fields": [
                   {
-                    "englishLabel": "Include step in path",
                     "label": "Uključuje korak na putu"
                   },
                   {
-                    "englishLabel": "Index in path",
                     "label": "Indeks na putu"
                   },
                   {
-                    "englishLabel": "User defined name",
                     "label": "Korisnički definirano ime"
                   }
                 ]
@@ -106,11 +80,9 @@
           }
         },
         {
-          "englishLabel": "Perspective ratio",
           "label": "Odnos perspektive"
         },
         {
-          "englishLabel": "Route path",
           "label": "Ruta puta"
         }
       ]
