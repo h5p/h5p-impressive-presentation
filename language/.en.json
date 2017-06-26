@@ -48,7 +48,8 @@
                   {
                     "spectrum": {},
                     "label": "Background color",
-                    "description": "Optional, can be set to have a background color for this step"
+                    "description": "Optional, can be set to have a background color for this step",
+                    "default": "#fff"
                   },
                   {
                     "label": "Background image"
