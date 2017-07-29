@@ -4,10 +4,10 @@
       "fields":[
         {
           "label":"ビューを作成",
-          "description":"Here you can create views with different transitions and text.",
+          "description":"ここでは、異なる切り替え効果とテキストで、ビューを作成できます。",
           "entity":"option",
           "field":{
-            "label":"View instance",
+            "label":"インスタンスの表示",
             "fields":[
               {
                 
@@ -15,36 +15,36 @@
               {
                 "fields":[
                   {
-                    "label":"center text"
+                    "label":"テキストの中央揃え"
                   },
                   {
-                    "label":"X position"
+                    "label":"X 座標"
                   },
                   {
-                    "label":"Y position"
+                    "label":"Y 座標"
                   },
                   {
-                    "label":"Z position",
-                    "description":"Negative values are further away from the camera and positive values are closer."
+                    "label":"Z 座標",
+                    "description":"負の値はカメラから離れており、正の値は近いことを表します。"
                   },
                   {
-                    "label":"X rotation",
-                    "description":"Default rotation is 0."
+                    "label":"X 軸回転",
+                    "description":"回転の既定値は 0 です。"
                   },
                   {
-                    "label":"Y rotation",
-                    "description":"Default rotation is 0."
+                    "label":"Y 軸回転",
+                    "description":"回転の既定値は 0 です。"
                   },
                   {
-                    "label":"Z rotation",
-                    "description":"Default rotation is 0."
+                    "label":"Z 軸回転",
+                    "description":"回転の既定値は 0 です。"
                   }
                 ]
               },
               {
                 "fields":[
                   {
-                    "label":"Transparent Background",
+                    "label":"透明な背景",
                     "description":"Uncheck to choose background color or image"
                   },
                   {
