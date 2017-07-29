@@ -52,7 +52,8 @@
                       
                     },
                     "label":"Boja pozadine",
-                    "description":"Opcionalno se može odrediti da se odredi boja pozadine za ovaj korak"
+                    "description":"Opcionalno se može odrediti da se odredi boja pozadine za ovaj korak",
+                    "default":"#fff"
                   },
                   {
                     "label":"Slika pozadine"
