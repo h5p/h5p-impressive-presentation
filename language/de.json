@@ -52,7 +52,8 @@
                       
                     },
                     "label":"Hintergrundfarbe",
-                    "description":"Optional, kann gesetzt werden, um für diesen Schritt eine Farbe zu wählen"
+                    "description":"Optional, kann gesetzt werden, um für diesen Schritt eine Farbe zu wählen",
+                    "default":"#fff"
                   },
                   {
                     "label":"Hintergrundbild"
