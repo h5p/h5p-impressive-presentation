@@ -45,29 +45,29 @@
                 "fields":[
                   {
                     "label":"透明な背景",
-                    "description":"Uncheck to choose background color or image"
+                    "description":"背景色や背景画像を選ぶには、チェックを外します。"
                   },
                   {
                     "spectrum":{
                       
                     },
-                    "label":"Background color",
-                    "description":"Optional, can be set to have a background color for this step",
+                    "label":"背景色",
+                    "description":"省略可能、このステップの背景色を設定できます。",
                     "default":"#fff"
                   },
                   {
-                    "label":"Background image"
+                    "label":"背景画像"
                   },
                   {
-                    "label":"Background width"
+                    "label":"背景の幅"
                   },
                   {
-                    "label":"Background height"
+                    "label":"背景の高さ"
                   }
                 ]
               },
               {
-                "label":"Ordering",
+                "label":"順序付け",
                 "fields":[
                   {
                     "label":"Include step in path"
@@ -76,7 +76,7 @@
                     "label":"Index in path"
                   },
                   {
-                    "label":"User defined name"
+                    "label":"ユーザー定義名"
                   }
                 ]
               }
