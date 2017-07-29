@@ -3,7 +3,7 @@
     {
       "fields":[
         {
-          "label":"Create views",
+          "label":"ビューを作成",
           "description":"Here you can create views with different transitions and text.",
           "entity":"option",
           "field":{
@@ -52,7 +52,8 @@
                       
                     },
                     "label":"Background color",
-                    "description":"Optional, can be set to have a background color for this step"
+                    "description":"Optional, can be set to have a background color for this step",
+                    "default":"#fff"
                   },
                   {
                     "label":"Background image"
