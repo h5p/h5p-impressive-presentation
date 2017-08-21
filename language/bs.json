@@ -1,0 +1,95 @@
+{
+  "semantics":[
+    {
+      "fields":[
+        {
+          "label":"Napravi preglede",
+          "description":"Ovdje možete praviti preglede sa različitim tranzicijama i tekstom.",
+          "entity":"alternativ",
+          "field":{
+            "label":"Pogledaj primjer",
+            "fields":[
+              {
+                
+              },
+              {
+                "fields":[
+                  {
+                    "label":"centriraj tekst"
+                  },
+                  {
+                    "label":"X pozicija"
+                  },
+                  {
+                    "label":"Y pozicija"
+                  },
+                  {
+                    "label":"Z pozicija",
+                    "description":"Negativne vrijednosti su dalje od kamere, a pozitivne su bliže."
+                  },
+                  {
+                    "label":"X rotacija",
+                    "description":"Zadana rotacija je 0."
+                  },
+                  {
+                    "label":"Y rotacija",
+                    "description":"Zadana rotacija je 0."
+                  },
+                  {
+                    "label":"Z rotacija",
+                    "description":"Zadana rotacija je 0."
+                  }
+                ]
+              },
+              {
+                "fields":[
+                  {
+                    "label":"Transparentna pozadina",
+                    "description":"Odznačite kako bi odabrali boju pozadine i sliku"
+                  },
+                  {
+                    "spectrum":{
+                      
+                    },
+                    "label":"Boja pozadine",
+                    "description":"Opcionalno se može odrediti da se odredi boja pozadine za ovaj korak",
+                    "default":"#fff"
+                  },
+                  {
+                    "label":"Slika pozadine"
+                  },
+                  {
+                    "label":"Širina pozadine"
+                  },
+                  {
+                    "label":"Visina pozadine"
+                  }
+                ]
+              },
+              {
+                "label":"Redoslijed",
+                "fields":[
+                  {
+                    "label":"Uključuje korak na putu"
+                  },
+                  {
+                    "label":"Indeks na putu"
+                  },
+                  {
+                    "label":"Korisnički definirano ime"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label":"Odnos perspektive"
+        },
+        {
+          "label":"Ruta puta"
+        }
+      ]
+    }
+  ]
+}

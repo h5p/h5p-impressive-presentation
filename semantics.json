@@ -2,18 +2,21 @@
   {
     "name": "viewsGroup",
     "type": "group",
+    "importance": "high",
     "widget": "impressPresentationEditor",
     "fields": [
       {
         "name": "views",
         "type": "list",
         "label": "Create views",
+        "importance": "high",
         "description": "Here you can create views with different transitions and text.",
         "entity": "option",
         "field": {
           "name": "viewInstance",
           "type": "group",
           "label": "View instance",
+          "importance": "high",
           "fields": [
             {
               "name": "action",
@@ -155,12 +158,14 @@
         "name": "perspectiveRatio",
         "type": "number",
         "label": "Perspective ratio",
+        "importance": "low",
         "default": 1
       },
       {
         "name": "route",
         "type": "group",
         "label": "Route path",
+        "importance": "low",
         "optional": true,
         "fields": []
       }

@@ -1,104 +1,82 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "fields": [
+      "fields":[
         {
-          "englishLabel": "Create views",
-          "label": "Opprett lag",
-          "englishDescription": "Here you can create views with different transitions and text.",
-          "description": "Her kan du opprette lag med forskjellige overganger og tekster.",
-          "englishEntity": "option",
-          "entity": "alternativ",
-          "field": {
-            "englishLabel": "View instance",
-            "label": "Lag",
-            "fields": [
-              {},
+          "label":"Opprett lag",
+          "description":"Her kan du opprette lag med forskjellige overganger og tekster.",
+          "entity":"alternativ",
+          "field":{
+            "label":"Lag",
+            "fields":[
               {
-                "fields": [
+                
+              },
+              {
+                "fields":[
                   {
-                    "englishLabel": "center text",
-                    "label": "Sentrer tekst"
+                    "label":"Sentrer tekst"
                   },
                   {
-                    "englishLabel": "X position",
-                    "label": "Posisjon på x-akse"
+                    "label":"Posisjon på x-akse"
                   },
                   {
-                    "englishLabel": "Y position",
-                    "label": "Posisjon på y-akse"
+                    "label":"Posisjon på y-akse"
                   },
                   {
-                    "englishLabel": "Z position",
-                    "label": "Posisjon på z-akse",
-                    "englishDescription": "Negative values are further away from the camera and positive values are closer.",
-                    "description": "Negative verdier er lengre unna kamera, mens positive verdier er nærmere."
+                    "label":"Posisjon på z-akse",
+                    "description":"Negative verdier er lengre unna kamera, mens positive verdier er nærmere."
                   },
                   {
-                    "englishLabel": "X rotation",
-                    "label": "Rotasjon rundt x-akse",
-                    "englishDescription": "Default rotation is 0.",
-                    "description": "Normal rotasjon er 0."
+                    "label":"Rotasjon rundt x-akse",
+                    "description":"Normal rotasjon er 0."
                   },
                   {
-                    "englishLabel": "Y rotation",
-                    "label": "Rotasjon rundt y-akse",
-                    "englishDescription": "Default rotation is 0.",
-                    "description": "Normal rotasjon er 0."
+                    "label":"Rotasjon rundt y-akse",
+                    "description":"Normal rotasjon er 0."
                   },
                   {
-                    "englishLabel": "Z rotation",
-                    "label": "Rotasjon rundt z-akse",
-                    "englishDescription": "Default rotation is 0.",
-                    "description": "Normal rotasjon er 0."
+                    "label":"Rotasjon rundt z-akse",
+                    "description":"Normal rotasjon er 0."
                   }
                 ]
               },
               {
-                "fields": [
+                "fields":[
                   {
-                    "englishLabel": "Transparent Background",
-                    "label": "Gjennomsiktig bakgrunn",
-                    "englishDescription": "Uncheck to choose background color or image",
-                    "description": "Slå av for å velge bilde- eller farge-bakgrunn"
+                    "label":"Gjennomsiktig bakgrunn",
+                    "description":"Slå av for å velge bilde- eller farge-bakgrunn"
                   },
                   {
-                    "englishLabel": "Background color",
-                    "label": "Bakgrunnsfarge",
-                    "englishDescription": "Optional, can be set to have a background color for this step",
-                    "description": "Valgri. Kan settes for å gi en bakgrunnsfarge til lag",
-                    "englishDefault": "#fff",
-                    "default": "#fff"
+                    "spectrum":{
+                      
+                    },
+                    "label":"Bakgrunnsfarge",
+                    "description":"Valgri. Kan settes for å gi en bakgrunnsfarge til lag",
+                    "default":"#fff"
                   },
                   {
-                    "englishLabel": "Background image",
-                    "label": "Bakgrunnsbilde"
+                    "label":"Bakgrunnsbilde"
                   },
                   {
-                    "englishLabel": "Background width",
-                    "label": "Bredde for lag"
+                    "label":"Bredde for lag"
                   },
                   {
-                    "englishLabel": "Background height",
-                    "label": "Høyde for lag"
+                    "label":"Høyde for lag"
                   }
                 ]
               },
               {
-                "englishLabel": "Ordering",
-                "label": "Rekkefølge",
-                "fields": [
+                "label":"Rekkefølge",
+                "fields":[
                   {
-                    "englishLabel": "Include step in path",
-                    "label": "Inkluder lag i sti"
+                    "label":"Inkluder lag i sti"
                   },
                   {
-                    "englishLabel": "Index in path",
-                    "label": "Nummer i sti"
+                    "label":"Nummer i sti"
                   },
                   {
-                    "englishLabel": "User defined name",
-                    "label": "Bruker definert navn"
+                    "label":"Bruker definert navn"
                   }
                 ]
               }
@@ -106,12 +84,10 @@
           }
         },
         {
-          "englishLabel": "Perspective ratio",
-          "label": "Perspektiv forholdstall"
+          "label":"Perspektiv forholdstall"
         },
         {
-          "englishLabel": "Route path",
-          "label": "Sti av lag"
+          "label":"Sti av lag"
         }
       ]
     }

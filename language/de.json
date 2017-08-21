@@ -1,0 +1,95 @@
+{
+  "semantics":[
+    {
+      "fields":[
+        {
+          "label":"Erstelle Ansichten",
+          "description":"Hier kannst du Ansichten mit verschiedenen Übergängen erstellen.",
+          "entity":"option",
+          "field":{
+            "label":"Instanz ansehen",
+            "fields":[
+              {
+                
+              },
+              {
+                "fields":[
+                  {
+                    "label":"Text zentrieren"
+                  },
+                  {
+                    "label":"X-Position"
+                  },
+                  {
+                    "label":"Y-Position"
+                  },
+                  {
+                    "label":"Z-Position",
+                    "description":"Negative Werte sind weiter weg von der Kamera und positive näher."
+                  },
+                  {
+                    "label":"X-Rotation",
+                    "description":"Standard-Rotation ist 0."
+                  },
+                  {
+                    "label":"Y-Rotation",
+                    "description":"Standard-Rotation ist 0."
+                  },
+                  {
+                    "label":"Z-Rotation",
+                    "description":"Standard-Rotation ist 0."
+                  }
+                ]
+              },
+              {
+                "fields":[
+                  {
+                    "label":"Transparenter Hintergrund",
+                    "description":"Abwählen, um eine Farbe oder ein Bild als Hintergrund zu wählen"
+                  },
+                  {
+                    "spectrum":{
+                      
+                    },
+                    "label":"Hintergrundfarbe",
+                    "description":"Optional, kann gesetzt werden, um für diesen Schritt eine Farbe zu wählen",
+                    "default":"#fff"
+                  },
+                  {
+                    "label":"Hintergrundbild"
+                  },
+                  {
+                    "label":"Breite des Hintergrundbildes"
+                  },
+                  {
+                    "label":"Höhe des Hintergrundbildes"
+                  }
+                ]
+              },
+              {
+                "label":"Reihenfolge",
+                "fields":[
+                  {
+                    "label":"Den Schritt in den Pfad integrieren"
+                  },
+                  {
+                    "label":"Stelle im Pfad"
+                  },
+                  {
+                    "label":"vom Nutzer definierter Name"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label":"Perspektivenverhältnis"
+        },
+        {
+          "label":"Route für den Pfad"
+        }
+      ]
+    }
+  ]
+}
