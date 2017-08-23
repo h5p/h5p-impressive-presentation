@@ -3,7 +3,7 @@
     {
       "fields":[
         {
-          "label":"Create views",
+          "label":"Crea viste",
           "description":"Here you can create views with different transitions and text.",
           "entity":"option",
           "field":{
