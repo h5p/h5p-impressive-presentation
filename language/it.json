@@ -3,11 +3,11 @@
     {
       "fields":[
         {
-          "label":"Crea viste",
-          "description":"Here you can create views with different transitions and text.",
+          "label":"Crea visualizzazioni",
+          "description":"Qui puoi creare visualizzazioni con testo e transizioni differenti.",
           "entity":"option",
           "field":{
-            "label":"View instance",
+            "label":"Istanza di visualizzazione",
             "fields":[
               {
                 
@@ -15,68 +15,68 @@
               {
                 "fields":[
                   {
-                    "label":"center text"
+                    "label":"testo centrale"
                   },
                   {
-                    "label":"X position"
+                    "label":"Posizione sull'asse X"
                   },
                   {
-                    "label":"Y position"
+                    "label":"Posizione sull'asse Y"
                   },
                   {
-                    "label":"Z position",
-                    "description":"Negative values are further away from the camera and positive values are closer."
+                    "label":"Posizione sull'asse Z",
+                    "description":"I valori negativi sono più lontani dalla fotocamera e quelli positivi più vicini."
                   },
                   {
-                    "label":"X rotation",
-                    "description":"Default rotation is 0."
+                    "label":"Rotazione sull'asse X",
+                    "description":"La rotazione predefinita è 0."
                   },
                   {
-                    "label":"Y rotation",
-                    "description":"Default rotation is 0."
+                    "label":"Rotazione sull'asse Y",
+                    "description":"La rotazione predefinita è 0."
                   },
                   {
-                    "label":"Z rotation",
-                    "description":"Default rotation is 0."
+                    "label":"Rotazione sull'asse Z",
+                    "description":"La rotazione predefinita è 0."
                   }
                 ]
               },
               {
                 "fields":[
                   {
-                    "label":"Transparent Background",
-                    "description":"Uncheck to choose background color or image"
+                    "label":"Sfondo trasparente",
+                    "description":"Deseleziona per scegliere un colore di sfondo o un'immagine"
                   },
                   {
                     "spectrum":{
                       
                     },
-                    "label":"Background color",
-                    "description":"Optional, can be set to have a background color for this step",
+                    "label":"Colore di sfondo",
+                    "description":"Facoltativo. Può essere impostato in modo da avere un colore di sfondo per questo passo",
                     "default":"#fff"
                   },
                   {
-                    "label":"Background image"
+                    "label":"Immagine di sfondo"
                   },
                   {
-                    "label":"Background width"
+                    "label":"Larghezza di sfondo"
                   },
                   {
-                    "label":"Background height"
+                    "label":"Altezza di sfondo"
                   }
                 ]
               },
               {
-                "label":"Ordering",
+                "label":"Ordinamento",
                 "fields":[
                   {
-                    "label":"Include step in path"
+                    "label":"Includi questo passo nel percorso"
                   },
                   {
-                    "label":"Index in path"
+                    "label":"Indice nel percorso"
                   },
                   {
-                    "label":"User defined name"
+                    "label":"Nome definito dall'utente"
                   }
                 ]
               }
@@ -84,10 +84,10 @@
           }
         },
         {
-          "label":"Perspective ratio"
+          "label":"Rapporto di prospettiva"
         },
         {
-          "label":"Route path"
+          "label":"Linea di percorso"
         }
       ]
     }
