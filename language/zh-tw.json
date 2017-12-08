@@ -3,76 +3,76 @@
     {
       "fields": [
         {
-          "label": "Create views",
-          "description": "Here you can create views with different transitions and text.",
-          "entity": "option",
+          "label": "創建視圖",
+          "description": "在這裡，您可以創建具有不同轉場特效和文字的視圖.",
+          "entity": "選項",
           "field": {
-            "label": "View instance",
+            "label": "查看實例",
             "fields": [
               {},
               {
                 "fields": [
                   {
-                    "label": "center text"
+                    "label": "置中文本"
                   },
                   {
-                    "label": "X position"
+                    "label": "X 位置"
                   },
                   {
-                    "label": "Y position"
+                    "label": "Y 位置"
                   },
                   {
-                    "label": "Z position",
-                    "description": "Negative values are further away from the camera and positive values are closer."
+                    "label": "Z 位置",
+                    "description": "負值離攝影機越遠，正值則越近."
                   },
                   {
-                    "label": "X rotation",
-                    "description": "Default rotation is 0."
+                    "label": "X 旋轉",
+                    "description": "預設的旋轉是0."
                   },
                   {
-                    "label": "Y rotation",
-                    "description": "Default rotation is 0."
+                    "label": "Y 旋轉",
+                    "description": "預設的旋轉是0."
                   },
                   {
-                    "label": "Z rotation",
-                    "description": "Default rotation is 0."
+                    "label": "Z 旋轉",
+                    "description": "預設的旋轉是0."
                   }
                 ]
               },
               {
                 "fields": [
                   {
-                    "label": "Transparent Background",
-                    "description": "Uncheck to choose background color or image"
+                    "label": "透明背景",
+                    "description": "取消選擇背景顏色或圖"
                   },
                   {
                     "spectrum": {},
-                    "label": "Background color",
-                    "description": "Optional, can be set to have a background color for this step",
+                    "label": "背景顏色",
+                    "description": "可選擇的，可以設置為具有此步驟的背景顏色",
                     "default": "#fff"
                   },
                   {
-                    "label": "Background image"
+                    "label": "背景圖"
                   },
                   {
-                    "label": "Background width"
+                    "label": "背景寬度"
                   },
                   {
-                    "label": "Background height"
+                    "label": "背景高度"
                   }
                 ]
               },
               {
-                "label": "Ordering",
+                "label": "訂閱",
                 "fields": [
                   {
-                    "label": "Include step in path"
+                    "label": "在路徑中包括的步驟"
                   },
                   {
-                    "label": "Index in path"
+                    "label": "在路徑中的索引目錄"
                   },
                   {
-                    "label": "User defined name"
+                    "label": "使用者定義的名稱"
                   }
                 ]
               }
@@ -80,10 +80,10 @@
           }
         },
         {
-          "label": "Perspective ratio"
+          "label": "透視比率"
         },
         {
-          "label": "Route path"
+          "label": "路線路徑"
         }
       ]
     }
