@@ -13,7 +13,7 @@
               {
                 "fields": [
                   {
-                    "label": "置中文本"
+                    "label": "內容文字"
                   },
                   {
                     "label": "X 位置"
@@ -43,16 +43,16 @@
                 "fields": [
                   {
                     "label": "透明背景",
-                    "description": "取消選擇背景顏色或圖"
+                    "description": "取消選擇背景顏色或圖示"
                   },
                   {
                     "spectrum": {},
                     "label": "背景顏色",
-                    "description": "可選擇的，可以設置為具有此步驟的背景顏色",
+                    "description": "選填，此步驟可設置背景顏色",
                     "default": "#fff"
                   },
                   {
-                    "label": "背景圖"
+                    "label": "背景圖示"
                   },
                   {
                     "label": "背景寬度"
