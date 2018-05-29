@@ -1,0 +1,95 @@
+{
+  "semantics":[
+    {
+      "fields":[
+        {
+          "label":"ビューを作成",
+          "description":"ここでは、異なる切り替え効果とテキストで、ビューを作成できます。",
+          "entity":"option",
+          "field":{
+            "label":"インスタンスの表示",
+            "fields":[
+              {
+                
+              },
+              {
+                "fields":[
+                  {
+                    "label":"テキストの中央揃え"
+                  },
+                  {
+                    "label":"X 座標"
+                  },
+                  {
+                    "label":"Y 座標"
+                  },
+                  {
+                    "label":"Z 座標",
+                    "description":"負の値はカメラから離れており、正の値は近いことを表します。"
+                  },
+                  {
+                    "label":"X 軸回転",
+                    "description":"回転の既定値は 0 です。"
+                  },
+                  {
+                    "label":"Y 軸回転",
+                    "description":"回転の既定値は 0 です。"
+                  },
+                  {
+                    "label":"Z 軸回転",
+                    "description":"回転の既定値は 0 です。"
+                  }
+                ]
+              },
+              {
+                "fields":[
+                  {
+                    "label":"透明な背景",
+                    "description":"背景色や背景画像を選ぶには、チェックを外します。"
+                  },
+                  {
+                    "spectrum":{
+                      
+                    },
+                    "label":"背景色",
+                    "description":"省略可能、このステップの背景色を設定できます。",
+                    "default":"#fff"
+                  },
+                  {
+                    "label":"背景画像"
+                  },
+                  {
+                    "label":"背景の幅"
+                  },
+                  {
+                    "label":"背景の高さ"
+                  }
+                ]
+              },
+              {
+                "label":"順序付け",
+                "fields":[
+                  {
+                    "label":"Include step in path"
+                  },
+                  {
+                    "label":"Index in path"
+                  },
+                  {
+                    "label":"ユーザー定義名"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label":"遠近比"
+        },
+        {
+          "label":"Route path"
+        }
+      ]
+    }
+  ]
+}

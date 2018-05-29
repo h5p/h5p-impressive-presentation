@@ -1,0 +1,95 @@
+{
+  "semantics":[
+    {
+      "fields":[
+        {
+          "label":"Crea visualizzazioni",
+          "description":"Qui puoi creare visualizzazioni con testo e transizioni differenti.",
+          "entity":"option",
+          "field":{
+            "label":"Istanza di visualizzazione",
+            "fields":[
+              {
+                
+              },
+              {
+                "fields":[
+                  {
+                    "label":"testo centrale"
+                  },
+                  {
+                    "label":"Posizione sull'asse X"
+                  },
+                  {
+                    "label":"Posizione sull'asse Y"
+                  },
+                  {
+                    "label":"Posizione sull'asse Z",
+                    "description":"I valori negativi sono più lontani dalla fotocamera e quelli positivi più vicini."
+                  },
+                  {
+                    "label":"Rotazione sull'asse X",
+                    "description":"La rotazione predefinita è 0."
+                  },
+                  {
+                    "label":"Rotazione sull'asse Y",
+                    "description":"La rotazione predefinita è 0."
+                  },
+                  {
+                    "label":"Rotazione sull'asse Z",
+                    "description":"La rotazione predefinita è 0."
+                  }
+                ]
+              },
+              {
+                "fields":[
+                  {
+                    "label":"Sfondo trasparente",
+                    "description":"Deseleziona per scegliere un colore di sfondo o un'immagine"
+                  },
+                  {
+                    "spectrum":{
+                      
+                    },
+                    "label":"Colore di sfondo",
+                    "description":"Facoltativo. Può essere impostato in modo da avere un colore di sfondo per questo passo",
+                    "default":"#fff"
+                  },
+                  {
+                    "label":"Immagine di sfondo"
+                  },
+                  {
+                    "label":"Larghezza di sfondo"
+                  },
+                  {
+                    "label":"Altezza di sfondo"
+                  }
+                ]
+              },
+              {
+                "label":"Ordinamento",
+                "fields":[
+                  {
+                    "label":"Includi questo passo nel percorso"
+                  },
+                  {
+                    "label":"Indice nel percorso"
+                  },
+                  {
+                    "label":"Nome definito dall'utente"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label":"Rapporto di prospettiva"
+        },
+        {
+          "label":"Linea di percorso"
+        }
+      ]
+    }
+  ]
+}

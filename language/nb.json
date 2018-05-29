@@ -1,78 +1,82 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "fields": [
+      "fields":[
         {
-          "label": "Opprett lag",
-          "description": "Her kan du opprette lag med forskjellige overganger og tekster.",
-          "entity": "alternativ",
-          "field": {
-            "label": "Lag",
-            "fields": [
-              {},
+          "label":"Opprett lag",
+          "description":"Her kan du opprette lag med forskjellige overganger og tekster.",
+          "entity":"alternativ",
+          "field":{
+            "label":"Lag",
+            "fields":[
               {
-                "fields": [
+                
+              },
+              {
+                "fields":[
                   {
-                    "label": "Sentrer tekst"
+                    "label":"Sentrer tekst"
                   },
                   {
-                    "label": "Posisjon på x-akse"
+                    "label":"Posisjon på x-akse"
                   },
                   {
-                    "label": "Posisjon på y-akse"
+                    "label":"Posisjon på y-akse"
                   },
                   {
-                    "label": "Posisjon på z-akse",
-                    "description": "Negative verdier er lengre unna kamera, mens positive verdier er nærmere."
+                    "label":"Posisjon på z-akse",
+                    "description":"Negative verdier er lengre unna kamera, mens positive verdier er nærmere."
                   },
                   {
-                    "label": "Rotasjon rundt x-akse",
-                    "description": "Normal rotasjon er 0."
+                    "label":"Rotasjon rundt x-akse",
+                    "description":"Normal rotasjon er 0."
                   },
                   {
-                    "label": "Rotasjon rundt y-akse",
-                    "description": "Normal rotasjon er 0."
+                    "label":"Rotasjon rundt y-akse",
+                    "description":"Normal rotasjon er 0."
                   },
                   {
-                    "label": "Rotasjon rundt z-akse",
-                    "description": "Normal rotasjon er 0."
+                    "label":"Rotasjon rundt z-akse",
+                    "description":"Normal rotasjon er 0."
                   }
                 ]
               },
               {
-                "fields": [
+                "fields":[
                   {
-                    "label": "Gjennomsiktig bakgrunn",
-                    "description": "Slå av for å velge bilde- eller farge-bakgrunn"
+                    "label":"Gjennomsiktig bakgrunn",
+                    "description":"Slå av for å velge bilde- eller farge-bakgrunn"
                   },
                   {
-                    "label": "Bakgrunnsfarge",
-                    "description": "Valgri. Kan settes for å gi en bakgrunnsfarge til lag",
-                    "englishDefault": "#fff",
-                    "default": "#fff"
+                    "spectrum":{
+                      
+                    },
+                    "label":"Bakgrunnsfarge",
+                    "description":"Valgri. Kan settes for å gi en bakgrunnsfarge til lag",
+                    "default":"#fff"
                   },
                   {
-                    "label": "Bakgrunnsbilde"
+                    "label":"Bakgrunnsbilde"
                   },
                   {
-                    "label": "Bredde for lag"
+                    "label":"Bredde for lag"
                   },
                   {
-                    "label": "Høyde for lag"
+                    "label":"Høyde for lag"
                   }
                 ]
               },
               {
-                "label": "Rekkefølge",
-                "fields": [
+                "label":"Rekkefølge",
+                "fields":[
                   {
-                    "label": "Inkluder lag i sti"
+                    "label":"Inkluder lag i sti"
                   },
                   {
-                    "label": "Nummer i sti"
+                    "label":"Nummer i sti"
                   },
                   {
-                    "label": "Bruker definert navn"
+                    "label":"Bruker definert navn"
                   }
                 ]
               }
@@ -80,10 +84,10 @@
           }
         },
         {
-          "label": "Perspektiv forholdstall"
+          "label":"Perspektiv forholdstall"
         },
         {
-          "label": "Sti av lag"
+          "label":"Sti av lag"
         }
       ]
     }
