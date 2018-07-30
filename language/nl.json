@@ -1,0 +1,91 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Weergaven maken",
+          "description": "Hier kun je weergaven creëren met verschillende overgangen en tekst.",
+          "entity": "keuzemogelijkheid",
+          "field": {
+            "label": "Instantie bekijken",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "middelste tekst"
+                  },
+                  {
+                    "label": "X positie"
+                  },
+                  {
+                    "label": "Y positie"
+                  },
+                  {
+                    "label": "Z positie",
+                    "description": "Negatieve waarden zijn verder weg van de camera en positieve waarden zijn dichterbij."
+                  },
+                  {
+                    "label": "X rotatie",
+                    "description": "De standaard rotatie is 0."
+                  },
+                  {
+                    "label": "Y rotatie",
+                    "description": "De standaard rotatie is 0."
+                  },
+                  {
+                    "label": "Z rotatie",
+                    "description": "De standaard rotatie is 0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Transparante achtergrond",
+                    "description": "Schakel het selectievakje uit om een achtergrondkleur of afbeelding te kiezen."
+                  },
+                  {
+                    "spectrum": {},
+                    "label": "Achtergrondkleur",
+                    "description": "Optioneel, dit kan worden ingesteld om een achtergrondkleur voor deze stap te krijgen",
+                    "default": "#fff"
+                  },
+                  {
+                    "label": "Achtergrondafbeelding"
+                  },
+                  {
+                    "label": "Achtergrondbreedte"
+                  },
+                  {
+                    "label": "Achtergrondhoogte"
+                  }
+                ]
+              },
+              {
+                "label": "Volgorde",
+                "fields": [
+                  {
+                    "label": "Neem een stap op in de route"
+                  },
+                  {
+                    "label": "Index in de route"
+                  },
+                  {
+                    "label": "Een door de gebruiker gedefinieerde naam"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Perspectiefverhouding"
+        },
+        {
+          "label": "Route"
+        }
+      ]
+    }
+  ]
+}
