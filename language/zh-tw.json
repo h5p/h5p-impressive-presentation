@@ -46,10 +46,8 @@
                     "description": "取消選擇背景顏色或圖示"
                   },
                   {
-                    "spectrum": {},
                     "label": "背景顏色",
-                    "description": "選填，此步驟可設置背景顏色",
-                    "default": "#fff"
+                    "description": "選填，此步驟可設置背景顏色"
                   },
                   {
                     "label": "背景圖示"

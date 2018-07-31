@@ -46,7 +46,6 @@
                     "description": "Abwählen, um eine Farbe oder ein Bild als Hintergrund zu wählen"
                   },
                   {
-                    "spectrum": {},
                     "label": "Hintergrundfarbe",
                     "description": "Optional, kann gesetzt werden, um für diesen Schritt eine Farbe zu wählen"
                   },

@@ -46,10 +46,8 @@
                     "description": "Schakel het selectievakje uit om een achtergrondkleur of afbeelding te kiezen."
                   },
                   {
-                    "spectrum": {},
                     "label": "Achtergrondkleur",
-                    "description": "Optioneel, dit kan worden ingesteld om een achtergrondkleur voor deze stap te krijgen",
-                    "default": "#fff"
+                    "description": "Optioneel, dit kan worden ingesteld om een achtergrondkleur voor deze stap te krijgen"
                   },
                   {
                     "label": "Achtergrondafbeelding"
