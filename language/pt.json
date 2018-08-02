@@ -1,0 +1,89 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Criar vista",
+          "description": "Aqui pode criar vistas com diferentes transições e texto.",
+          "entity": "opção",
+          "field": {
+            "label": "Instância de vista",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "centrar texto"
+                  },
+                  {
+                    "label": "posição em X"
+                  },
+                  {
+                    "label": "posição em Y"
+                  },
+                  {
+                    "label": "posição em Z",
+                    "description": "Valores negativos posicionam os elementos mais afastados da camera e valores positivos mais perto."
+                  },
+                  {
+                    "label": "rotação em X",
+                    "description": "A rotação por defeito é 0."
+                  },
+                  {
+                    "label": "rotação em Y",
+                    "description": "A rotação por defeito é 0."
+                  },
+                  {
+                    "label": "rotação em Z",
+                    "description": "A rotação por defeito é 0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Fundo Transparente",
+                    "description": "Desative para escolher a cor de fundo ou imagem"
+                  },
+                  {
+                    "label": "Cor de fundo",
+                    "description": "Opcional, pode ser definida uma cor de fundo para este passo"
+                  },
+                  {
+                    "label": "Imagem de fundo"
+                  },
+                  {
+                    "label": "Largura do fundo"
+                  },
+                  {
+                    "label": "Altura do fundo"
+                  }
+                ]
+              },
+              {
+                "label": "Ordem",
+                "fields": [
+                  {
+                    "label": "Incluir o passo no caminho"
+                  },
+                  {
+                    "label": "Incluir o índice no caminho"
+                  },
+                  {
+                    "label": "Nome definido pelo utilizador"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Rácio da perspectiva"
+        },
+        {
+          "label": "Caminho"
+        }
+      ]
+    }
+  ]
+}
