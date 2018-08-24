@@ -1,0 +1,89 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Criar visões",
+          "description": "Aqui você pode criar visões com diferentes transições e textos.",
+          "entity": "option",
+          "field": {
+            "label": "Ver instância",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "Centralizar texto"
+                  },
+                  {
+                    "label": "Posição em X"
+                  },
+                  {
+                    "label": "Posição em Y"
+                  },
+                  {
+                    "label": "Posição em Z",
+                    "description": "Valores negativos estão mais longe da câmera e valores positivos estão mais perto."
+                  },
+                  {
+                    "label": "Rotação em X",
+                    "description": "Rotação padrão é 0."
+                  },
+                  {
+                    "label": "Rotação em Y",
+                    "description": "Rotação padrão é 0."
+                  },
+                  {
+                    "label": "Rotação em Z",
+                    "description": "Rotação padrão é 0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Fundo transparente",
+                    "description": "Desmarque se desenha escolher uma cor ou uma imagem de fundo"
+                  },
+                  {
+                    "label": "Cor do plano de fundo",
+                    "description": "Opcional, pode ser definido para adicionar uma cor ao fundo nesta etapa"
+                  },
+                  {
+                    "label": "Imagem de fundo"
+                  },
+                  {
+                    "label": "Largura do plano de fundo"
+                  },
+                  {
+                    "label": "Altura do plano de fundo"
+                  }
+                ]
+              },
+              {
+                "label": "Ordenação",
+                "fields": [
+                  {
+                    "label": "Incluir etapa no trajeto"
+                  },
+                  {
+                    "label": "Índice no trajeto"
+                  },
+                  {
+                    "label": "Nome definido pelo usuário"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Proporção de perspectiva"
+        },
+        {
+          "label": "Trajeto de rota"
+        }
+      ]
+    }
+  ]
+}
