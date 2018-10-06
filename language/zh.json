@@ -1,0 +1,89 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "創建視圖",
+          "description": "在這裡，您可以創建具有不同轉場特效和文字的視圖.",
+          "entity": "選項",
+          "field": {
+            "label": "查看實例",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "內容文字"
+                  },
+                  {
+                    "label": "X 位置"
+                  },
+                  {
+                    "label": "Y 位置"
+                  },
+                  {
+                    "label": "Z 位置",
+                    "description": "負值離攝影機越遠，正值則越近."
+                  },
+                  {
+                    "label": "X 旋轉",
+                    "description": "預設的旋轉是0."
+                  },
+                  {
+                    "label": "Y 旋轉",
+                    "description": "預設的旋轉是0."
+                  },
+                  {
+                    "label": "Z 旋轉",
+                    "description": "預設的旋轉是0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "透明背景",
+                    "description": "取消選擇背景顏色或圖示"
+                  },
+                  {
+                    "label": "背景顏色",
+                    "description": "選填，此步驟可設置背景顏色"
+                  },
+                  {
+                    "label": "背景圖示"
+                  },
+                  {
+                    "label": "背景寬度"
+                  },
+                  {
+                    "label": "背景高度"
+                  }
+                ]
+              },
+              {
+                "label": "訂閱",
+                "fields": [
+                  {
+                    "label": "在路徑中包括的步驟"
+                  },
+                  {
+                    "label": "在路徑中的索引目錄"
+                  },
+                  {
+                    "label": "使用者定義的名稱"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "透視比率"
+        },
+        {
+          "label": "路線路徑"
+        }
+      ]
+    }
+  ]
+}
