@@ -1,0 +1,89 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Sortu ikuspenak",
+          "description": "Hemen ikuspenak sor ditzakezu hainbat trantsizio eta testurekin.",
+          "entity": "aukera",
+          "field": {
+            "label": "Ikusi instantzia",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "Erdiratu testua"
+                  },
+                  {
+                    "label": "X kokapena"
+                  },
+                  {
+                    "label": "Y kokapena"
+                  },
+                  {
+                    "label": "Z kokapena",
+                    "description": "Balore negatiboak kamaratik urrunago daude eta positiboak, kamaratik gertuago."
+                  },
+                  {
+                    "label": "X biraketa",
+                    "description": "Lehenetsitako biraketa 0 da."
+                  },
+                  {
+                    "label": "Y biraketa",
+                    "description": "Lehenetsitako biraketa 0 da."
+                  },
+                  {
+                    "label": "Z biraketa",
+                    "description": "Lehenetsitako biraketa 0 da."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Atzeko plano gardena",
+                    "description": "Utzi aukeratu gabe atzeko planoaren kolorea edo irudia aukeratzeko"
+                  },
+                  {
+                    "label": "Atzeko planoaren kolorea",
+                    "description": "Hautazkoa. Urrats honetan atzeko planoaren kolorea izateko ezar daiteke"
+                  },
+                  {
+                    "label": "Atzeko planoko irudia"
+                  },
+                  {
+                    "label": "Atzeko planoaren zabalera"
+                  },
+                  {
+                    "label": "Atzko planoaren altuera"
+                  }
+                ]
+              },
+              {
+                "label": "Ordena",
+                "fields": [
+                  {
+                    "label": "Gehitu urratsa bidean"
+                  },
+                  {
+                    "label": "Indizea bidean"
+                  },
+                  {
+                    "label": "Erabiltzaileak definitutako izena"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Perspektiba-ratioa"
+        },
+        {
+          "label": "Ibilbidea"
+        }
+      ]
+    }
+  ]
+}
