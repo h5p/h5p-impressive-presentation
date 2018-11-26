@@ -47,7 +47,8 @@
                   },
                   {
                     "label": "Background color",
-                    "description": "Optional, can be set to have a background color for this step"
+                    "description": "Optional, can be set to have a background color for this step",
+                    "default": "#fff"
                   },
                   {
                     "label": "Background image"
@@ -82,6 +83,19 @@
         },
         {
           "label": "Route path"
+        }
+      ]
+    },
+    {
+      "label": "Readspeaker",
+      "fields": [
+        {
+          "label": "Previous slide",
+          "default": "Previous slide"
+        },
+        {
+          "label": "Next slide",
+          "default": "Next slide"
         }
       ]
     }

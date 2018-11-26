@@ -47,7 +47,8 @@
                   },
                   {
                     "label": "Hintergrundfarbe",
-                    "description": "Optional, kann gesetzt werden, um für diesen Schritt eine Farbe zu wählen"
+                    "description": "Optional, kann gesetzt werden, um für diesen Schritt eine Farbe zu wählen",
+                    "default": "#fff"
                   },
                   {
                     "label": "Hintergrundbild"
@@ -82,6 +83,19 @@
         },
         {
           "label": "Route für den Pfad"
+        }
+      ]
+    },
+    {
+      "label": "Readspeaker",
+      "fields": [
+        {
+          "label": "Previous slide",
+          "default": "Previous slide"
+        },
+        {
+          "label": "Next slide",
+          "default": "Next slide"
         }
       ]
     }

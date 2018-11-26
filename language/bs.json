@@ -47,7 +47,8 @@
                   },
                   {
                     "label": "Boja pozadine",
-                    "description": "Opcionalno se može odrediti da se odredi boja pozadine za ovaj korak"
+                    "description": "Opcionalno se može odrediti da se odredi boja pozadine za ovaj korak",
+                    "default": "#fff"
                   },
                   {
                     "label": "Slika pozadine"
@@ -82,6 +83,19 @@
         },
         {
           "label": "Ruta puta"
+        }
+      ]
+    },
+    {
+      "label": "Readspeaker",
+      "fields": [
+        {
+          "label": "Previous slide",
+          "default": "Previous slide"
+        },
+        {
+          "label": "Next slide",
+          "default": "Next slide"
         }
       ]
     }

@@ -47,7 +47,8 @@
                   },
                   {
                     "label": "背景顏色",
-                    "description": "選填，此步驟可設置背景顏色"
+                    "description": "選填，此步驟可設置背景顏色",
+                    "default": "#fff"
                   },
                   {
                     "label": "背景圖示"
@@ -82,6 +83,19 @@
         },
         {
           "label": "路線路徑"
+        }
+      ]
+    },
+    {
+      "label": "Readspeaker",
+      "fields": [
+        {
+          "label": "Previous slide",
+          "default": "Previous slide"
+        },
+        {
+          "label": "Next slide",
+          "default": "Next slide"
         }
       ]
     }

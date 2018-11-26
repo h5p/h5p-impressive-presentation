@@ -170,5 +170,28 @@
         "fields": []
       }
     ]
+  },
+  {
+    "name": "a11y",
+    "type": "group",
+    "common": true,
+    "label": "Readspeaker",
+    "importance": "low",
+    "fields": [
+      {
+        "name": "prev",
+        "type": "text",
+        "label": "Previous slide",
+        "importance": "low",
+        "default": "Previous slide"
+      },
+      {
+        "name": "next",
+        "type": "text",
+        "label": "Next slide",
+        "importance": "low",
+        "default": "Next slide"
+      }
+    ]
   }
 ]

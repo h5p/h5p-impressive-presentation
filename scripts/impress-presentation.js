@@ -67,11 +67,15 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
       },
       viewPortWidth: 640,
       viewPortHeight: 360,
-      keyZoomAmount: 10
+      keyZoomAmount: 10,
+      a11y: {
+        prev: 'Previous slide',
+        next: 'Next slide'
+      }
     };
 
     // Extend default params
-    self.params = $.extend(true, self.defaults, params);
+    self.params = $.extend(true, self.defaultParams, params);
 
     // Initialization options
     var defaultOptions = {
@@ -230,14 +234,18 @@ H5P.ImpressPresentation = (function ($, EventDispatcher, Step, JoubelUI) {
 
     // Previous step
     JoubelUI.createButton({
-      'class': 'h5p-impress-nav-button'
+      'class': 'h5p-impress-nav-button',
+      'aria-label': this.params.a11y.prev,
+      'title': this.params.a11y.prev
     }).click(function () {
       self.$jmpress.jmpress('prev');
     }).appendTo($navLine);
 
     // Next step
     JoubelUI.createButton({
-      'class': 'h5p-impress-nav-button next'
+      'class': 'h5p-impress-nav-button next',
+      'aria-label': this.params.a11y.next,
+      'title': this.params.a11y.next
     }).click(function () {
       self.$jmpress.jmpress('next');
     }).appendTo($navLine);

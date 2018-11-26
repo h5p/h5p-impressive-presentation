@@ -47,7 +47,8 @@
                   },
                   {
                     "label": "لون الخلفية",
-                    "description": "اختياري ، يمكن تعيين لون خلفية لهذه الخطوة"
+                    "description": "اختياري ، يمكن تعيين لون خلفية لهذه الخطوة",
+                    "default": "#fff"
                   },
                   {
                     "label": "صورة الخلفية"
@@ -82,6 +83,19 @@
         },
         {
           "label": "المسار"
+        }
+      ]
+    },
+    {
+      "label": "Readspeaker",
+      "fields": [
+        {
+          "label": "Previous slide",
+          "default": "Previous slide"
+        },
+        {
+          "label": "Next slide",
+          "default": "Next slide"
         }
       ]
     }

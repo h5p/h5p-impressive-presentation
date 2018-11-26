@@ -47,7 +47,8 @@
                   },
                   {
                     "label": "Bakgrunnsfarge",
-                    "description": "Valgri. Kan settes for å gi en bakgrunnsfarge til lag"
+                    "description": "Valgri. Kan settes for å gi en bakgrunnsfarge til lag",
+                    "default": "#fff"
                   },
                   {
                     "label": "Bakgrunnsbilde"
@@ -82,6 +83,19 @@
         },
         {
           "label": "Sti av lag"
+        }
+      ]
+    },
+    {
+      "label": "Readspeaker",
+      "fields": [
+        {
+          "label": "Previous slide",
+          "default": "Previous slide"
+        },
+        {
+          "label": "Next slide",
+          "default": "Next slide"
         }
       ]
     }

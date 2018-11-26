@@ -47,7 +47,8 @@
                   },
                   {
                     "label": "Achtergrondkleur",
-                    "description": "Optioneel, dit kan worden ingesteld om een achtergrondkleur voor deze stap te krijgen"
+                    "description": "Optioneel, dit kan worden ingesteld om een achtergrondkleur voor deze stap te krijgen",
+                    "default": "#fff"
                   },
                   {
                     "label": "Achtergrondafbeelding"
@@ -82,6 +83,19 @@
         },
         {
           "label": "Route"
+        }
+      ]
+    },
+    {
+      "label": "Readspeaker",
+      "fields": [
+        {
+          "label": "Previous slide",
+          "default": "Previous slide"
+        },
+        {
+          "label": "Next slide",
+          "default": "Next slide"
         }
       ]
     }

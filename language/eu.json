@@ -47,7 +47,8 @@
                   },
                   {
                     "label": "Atzeko planoaren kolorea",
-                    "description": "Hautazkoa. Urrats honetan atzeko planoaren kolorea izateko ezar daiteke"
+                    "description": "Hautazkoa. Urrats honetan atzeko planoaren kolorea izateko ezar daiteke",
+                    "default": "#fff"
                   },
                   {
                     "label": "Atzeko planoko irudia"
@@ -82,6 +83,19 @@
         },
         {
           "label": "Ibilbidea"
+        }
+      ]
+    },
+    {
+      "label": "Readspeaker",
+      "fields": [
+        {
+          "label": "Previous slide",
+          "default": "Previous slide"
+        },
+        {
+          "label": "Next slide",
+          "default": "Next slide"
         }
       ]
     }
