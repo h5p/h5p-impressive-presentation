@@ -90,12 +90,12 @@
       "label": "Readspeaker",
       "fields": [
         {
-          "label": "Previous slide",
-          "default": "Previous slide"
+          "label": "Aurreko diapositiba",
+          "default": "Hurrengo diapositiba"
         },
         {
-          "label": "Next slide",
-          "default": "Next slide"
+          "label": "Hurrengo diapositiba",
+          "default": "Hurrengo diapositiba"
         }
       ]
     }
