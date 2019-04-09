@@ -1,0 +1,103 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Loo vaated",
+          "description": "Siin saad luua erinevate üleminekuefektide ja tekstidega vaateid.",
+          "entity": "valik",
+          "field": {
+            "label": "Vaata näidet",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "joonda tekst keskele"
+                  },
+                  {
+                    "label": "X asukoht"
+                  },
+                  {
+                    "label": "Y asukoht"
+                  },
+                  {
+                    "label": "Z asukoht",
+                    "description": "Negatiivsed väärtused on kaamerast kaugemal ja positiivsed väärtused on lähemal."
+                  },
+                  {
+                    "label": "X pööre",
+                    "description": "Vaikepööre on 0."
+                  },
+                  {
+                    "label": "Y pööre",
+                    "description": "Vaikepööre on 0."
+                  },
+                  {
+                    "label": "Z pööre",
+                    "description": "Vaikepööre on 0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Läbipaistev taust",
+                    "description": "Märgi lahti, et valida taustavärv või -pilt"
+                  },
+                  {
+                    "label": "Taustavärv",
+                    "description": "Valikuline, määrab selle sammu taustavärvi",
+                    "default": "#fff"
+                  },
+                  {
+                    "label": "Taustapilt"
+                  },
+                  {
+                    "label": "Tausta laius"
+                  },
+                  {
+                    "label": "Tausta kõrgus"
+                  }
+                ]
+              },
+              {
+                "label": "Järjestus",
+                "fields": [
+                  {
+                    "label": "Kaasa samm rajale"
+                  },
+                  {
+                    "label": "Indeks rajal"
+                  },
+                  {
+                    "label": "Kasutaja-määratud nimi"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Perspektiivisuhe"
+        },
+        {
+          "label": "Rada"
+        }
+      ]
+    },
+    {
+      "label": "Tekstiluger",
+      "fields": [
+        {
+          "label": "Eelmine lehekülg",
+          "default": "Eelmine lehekülg"
+        },
+        {
+          "label": "Järgmine lehekülg",
+          "default": "Järgmine lehekülg"
+        }
+      ]
+    }
+  ]
+}
