@@ -1,0 +1,103 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Luo näkymiä",
+          "description": "Täällä voit luoda erilaisia näkymiä erilaisilla siirtymillä ja teksteillä.",
+          "entity": "asetus",
+          "field": {
+            "label": "Katseluetäisyys",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "center text"
+                  },
+                  {
+                    "label": "X positio"
+                  },
+                  {
+                    "label": "Y positio"
+                  },
+                  {
+                    "label": "Z positio",
+                    "description": "Negatiiviset arvot ovat kauempana kamerasta ja positiiviset arvot ovat lähempänä kameraa"
+                  },
+                  {
+                    "label": "X rotaatio",
+                    "description": "Oletus rotaatio on 0."
+                  },
+                  {
+                    "label": "Y rotaatio",
+                    "description": "Oletus rotaatio on 0."
+                  },
+                  {
+                    "label": "Z rotaatio",
+                    "description": "Oletus rotaatio on 0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Läpinäkyvä tausta",
+                    "description": "Poista ruksi valitaksesi taustavärin tai taustakuvan"
+                  },
+                  {
+                    "label": "Taustaväri",
+                    "description": "Vapaaehtoinen, voit valita taustavärin tälle askeleelle",
+                    "Oletus": "#fff"
+                  },
+                  {
+                    "label": "Taustakuva"
+                  },
+                  {
+                    "label": "Taustan leveys"
+                  },
+                  {
+                    "label": "Taustan korkeus"
+                  }
+                ]
+              },
+              {
+                "label": "Järjestys",
+                "fields": [
+                  {
+                    "label": "Sisällytä askel polussa"
+                  },
+                  {
+                    "label": "Indeksi polussa"
+                  },
+                  {
+                    "label": "Käyttäjän määrittelemä nimi"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Persepktiivin kuvasuhde"
+        },
+        {
+          "label": "Reittipolku"
+        }
+      ]
+    },
+    {
+      "label": "Ruudunlukija",
+      "fields": [
+        {
+          "label": "Edellinen dia",
+          "Oletus": "Edellinen dia"
+        },
+        {
+          "label": "Seuraava dia",
+          "Oletus": "Seuraava dia"
+        }
+      ]
+    }
+  ]
+}
