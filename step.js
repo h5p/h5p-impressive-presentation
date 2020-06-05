@@ -398,7 +398,7 @@ H5P.ImpressPresentation.Step = (function ($, EventDispatcher) {
       $backgroundImage = $('<img>', {
         'src': H5P.getPath(params.backgroundGroup.backgroundImage.path, contentId),
         'class': 'h5p-impress-background-image'
-      }).load(function () {
+      }).on('load', function () {
         resizeImage();
       }).appendTo($backgroundContainer);
     };
