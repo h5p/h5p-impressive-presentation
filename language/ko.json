@@ -1,0 +1,103 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "보기 만들기",
+          "description": "여기에서 전환과 텍스트로 보기를 만들 수 있다.",
+          "entity": "선택사항",
+          "field": {
+            "label": "인스턴스 보기",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "중앙 텍스트"
+                  },
+                  {
+                    "label": "X 위치"
+                  },
+                  {
+                    "label": "Y 위치"
+                  },
+                  {
+                    "label": "Z 위치",
+                    "description": "음수값은 카메라에서 더 멀리 떨어져 있고 양의 값은 더 가깝다."
+                  },
+                  {
+                    "label": "X 회전",
+                    "description": "기본 회전은 0"
+                  },
+                  {
+                    "label": "Y 회전",
+                    "description": "기본 회전은 0."
+                  },
+                  {
+                    "label": "Z 회전",
+                    "description": "기본 회전은 0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "투명한 배경",
+                    "description": "백그라운드 색상 또는 이미지 선택 취소"
+                  },
+                  {
+                    "label": "배경색",
+                    "description": "(선택사항) 이 단계에서 배경색을 갖도록 설정할 수 있음",
+                    "default": "#fff"
+                  },
+                  {
+                    "label": "배경 이미지"
+                  },
+                  {
+                    "label": "배경 폭"
+                  },
+                  {
+                    "label": "배경 높이"
+                  }
+                ]
+              },
+              {
+                "label": "순서",
+                "fields": [
+                  {
+                    "label": "경로에 단계 포함"
+                  },
+                  {
+                    "label": "경로에 색인"
+                  },
+                  {
+                    "label": "사용자 정의 이름"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "원근 비율"
+        },
+        {
+          "label": "경로"
+        }
+      ]
+    },
+    {
+      "label": "자동 읽어주기 기능",
+      "fields": [
+        {
+          "label": "이전 슬라이드",
+          "default": "Perspective ratio"
+        },
+        {
+          "label": "다음 슬라이드",
+          "default": "다음 슬라이드"
+        }
+      ]
+    }
+  ]
+}
