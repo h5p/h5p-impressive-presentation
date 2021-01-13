@@ -48,7 +48,7 @@
                   {
                     "label": "Taustaväri",
                     "description": "Vapaaehtoinen, voit valita taustavärin tälle askeleelle",
-                    "Oletus": "#fff"
+                    "default": "#fff"
                   },
                   {
                     "label": "Taustakuva"
@@ -91,11 +91,11 @@
       "fields": [
         {
           "label": "Edellinen dia",
-          "Oletus": "Edellinen dia"
+          "default": "Edellinen dia"
         },
         {
           "label": "Seuraava dia",
-          "Oletus": "Seuraava dia"
+          "default": "Seuraava dia"
         }
       ]
     }
