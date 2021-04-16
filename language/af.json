@@ -1,0 +1,103 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Skep aansigte",
+          "description": "Hier kan jy aansigte met verskillende oorgange en tekste skep.",
+          "entity": "opsie",
+          "field": {
+            "label": "Bekyk voorbeeld",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "middel teks"
+                  },
+                  {
+                    "label": "X posisie"
+                  },
+                  {
+                    "label": "Y posisie"
+                  },
+                  {
+                    "label": "Z posisie",
+                    "description": "Negatiewe waardes is verder van die kamera af en positiewe waardes is nader."
+                  },
+                  {
+                    "label": "X rotasie",
+                    "description": "Verstekrotasie is 0."
+                  },
+                  {
+                    "label": "Y rotasie",
+                    "description": "Verstekrotasie is 0."
+                  },
+                  {
+                    "label": "Z rotasie",
+                    "description": "Verstekrotasie is 0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Deursigtige agtergrond",
+                    "description": "Ontmerk om agtergrondkleur of -beeld te kies"
+                  },
+                  {
+                    "label": "Agtergrondkleur",
+                    "description": "Opsioneel, kan verstel word om 'n agtergrondkleur vir die stap te hê",
+                    "default": "#fff"
+                  },
+                  {
+                    "label": "Agtergrondprent"
+                  },
+                  {
+                    "label": "Agtergrond wydte"
+                  },
+                  {
+                    "label": "Agtergrondhoogte"
+                  }
+                ]
+              },
+              {
+                "label": "Ordening",
+                "fields": [
+                  {
+                    "label": "Sluit stap in pad in"
+                  },
+                  {
+                    "label": "Indeks in pad"
+                  },
+                  {
+                    "label": "Gebruiker gedefinieerde naam"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Perspektiefverhouding"
+        },
+        {
+          "label": "Roete pad"
+        }
+      ]
+    },
+    {
+      "label": "Spreekleser",
+      "fields": [
+        {
+          "label": "Vorige skyfie",
+          "default": "Vorige skyfie"
+        },
+        {
+          "label": "Volgende skyfie",
+          "default": "Volgende skyfie"
+        }
+      ]
+    }
+  ]
+}
