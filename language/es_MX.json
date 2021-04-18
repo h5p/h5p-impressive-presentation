@@ -1,0 +1,103 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Crear vistas",
+          "description": "Aquí usted puede crear vistas con diferentes transiciones y textos.",
+          "entity": "opción",
+          "field": {
+            "label": "Ver instancia",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "centrar texto"
+                  },
+                  {
+                    "label": "posición X"
+                  },
+                  {
+                    "label": "posición Y"
+                  },
+                  {
+                    "label": "posición Z",
+                    "description": "Los valores negativos están más alejados de la cámara y los valores positivos están más cercanos."
+                  },
+                  {
+                    "label": "rotación X",
+                    "description": "La rotación predeterminada es 0."
+                  },
+                  {
+                    "label": "rotación Y",
+                    "description": "La rotación predeterminada es 0."
+                  },
+                  {
+                    "label": "rotación Z",
+                    "description": "La rotación predeterminada es 0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Fondo Transparente",
+                    "description": "Desactivar para elegir imagen o color de fondo"
+                  },
+                  {
+                    "label": "Color del fondo",
+                    "description": "Opcional, puede configurarse para tener un color del fondo para este paso",
+                    "default": "#fff"
+                  },
+                  {
+                    "label": "Imagen de fondo"
+                  },
+                  {
+                    "label": "Ancho del fondo"
+                  },
+                  {
+                    "label": "Altura del fondo"
+                  }
+                ]
+              },
+              {
+                "label": "Ordenamiento",
+                "fields": [
+                  {
+                    "label": "Incluir paso en ruta"
+                  },
+                  {
+                    "label": "Índice en ruta"
+                  },
+                  {
+                    "label": "Nombre definido por el usuario"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Proporción de aspecto de perspectiva"
+        },
+        {
+          "label": "Ruta de ruta"
+        }
+      ]
+    },
+    {
+      "label": "Lector de texto en voz alta",
+      "fields": [
+        {
+          "label": "Página anterior",
+          "default": "Página anterior"
+        },
+        {
+          "label": "Página siguiente",
+          "default": "Página siguiente"
+        }
+      ]
+    }
+  ]
+}
