@@ -1,0 +1,103 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Vytvořit pohled",
+          "description": "Zde můžete vytvářet pohledy s různými přechody a textem.",
+          "entity": "volba",
+          "field": {
+            "label": "Zobrazit instanci",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "cetrovat text"
+                  },
+                  {
+                    "label": "pozice X"
+                  },
+                  {
+                    "label": "pozice Y"
+                  },
+                  {
+                    "label": "pozice Z",
+                    "description": "Záporné hodnoty jsou dále od kamery a kladné hodnoty jsou blíže."
+                  },
+                  {
+                    "label": "X rotace",
+                    "description": "Výchozí rotace je 0."
+                  },
+                  {
+                    "label": "Y rotace",
+                    "description": "Výchozí rotace je 0."
+                  },
+                  {
+                    "label": "Z rotace",
+                    "description": "Výchozí rotace je 0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Průhledné pozadí",
+                    "description": "Zrušit zaškrtnutí a vybrat barvu pozadí nebo obrázek"
+                  },
+                  {
+                    "label": "Barva pozadí",
+                    "description": "Volitelné, pro tento krok lze nastavit barvu pozadí",
+                    "default": "#fff"
+                  },
+                  {
+                    "label": "Obrázek na pozadí"
+                  },
+                  {
+                    "label": "Šířka pozadí"
+                  },
+                  {
+                    "label": "Výška pozadí"
+                  }
+                ]
+              },
+              {
+                "label": "Řazaní",
+                "fields": [
+                  {
+                    "label": "Zahrnout krok do cesty"
+                  },
+                  {
+                    "label": "Index v cestě"
+                  },
+                  {
+                    "label": "Uživatelem definovaný název"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Poměr perspektiv"
+        },
+        {
+          "label": "Cesta trasy"
+        }
+      ]
+    },
+    {
+      "label": "Čtecí zařízení",
+      "fields": [
+        {
+          "label": "c",
+          "default": "Předchozí snímek"
+        },
+        {
+          "label": "Další snímek",
+          "default": "Další snímek"
+        }
+      ]
+    }
+  ]
+}
