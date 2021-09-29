@@ -90,8 +90,8 @@
       "label": "Vorlesewerkzeug",
       "fields": [
         {
-          "label": "Previous slide",
-          "default": "Previous slide"
+          "label": "Vorherige Folie",
+          "default": "Vorherige Folie"
         },
         {
           "label": "Next slide",
