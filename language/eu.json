@@ -65,7 +65,7 @@
                 "label": "Ordena",
                 "fields": [
                   {
-                    "label": "Gehitu urratsa bidean"
+                    "label": "Sartu urratsa bidean"
                   },
                   {
                     "label": "Indizea bidean"
@@ -87,7 +87,7 @@
       ]
     },
     {
-      "label": "Readspeaker",
+      "label": "Irakurtzen duen bozgorailua",
       "fields": [
         {
           "label": "Aurreko diapositiba",
