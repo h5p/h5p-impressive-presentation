@@ -5,7 +5,7 @@
         {
           "label": "Weergaven maken",
           "description": "Hier kun je weergaven creëren met verschillende overgangen en tekst.",
-          "entity": "keuzemogelijkheid",
+          "entity": "optie",
           "field": {
             "label": "Instantie bekijken",
             "fields": [
@@ -13,29 +13,29 @@
               {
                 "fields": [
                   {
-                    "label": "middelste tekst"
+                    "label": "tekst centreren"
                   },
                   {
-                    "label": "X positie"
+                    "label": "X-positie"
                   },
                   {
-                    "label": "Y positie"
+                    "label": "Y-positie"
                   },
                   {
-                    "label": "Z positie",
+                    "label": "Z-positie",
                     "description": "Negatieve waarden zijn verder weg van de camera en positieve waarden zijn dichterbij."
                   },
                   {
-                    "label": "X rotatie",
-                    "description": "De standaard rotatie is 0."
+                    "label": "X-rotatie",
+                    "description": "De standaardrotatie is 0."
                   },
                   {
-                    "label": "Y rotatie",
-                    "description": "De standaard rotatie is 0."
+                    "label": "Y-rotatie",
+                    "description": "De standaardrotatie is 0."
                   },
                   {
-                    "label": "Z rotatie",
-                    "description": "De standaard rotatie is 0."
+                    "label": "Z-rotatie",
+                    "description": "De standaardrotatie is 0."
                   }
                 ]
               },
@@ -43,11 +43,11 @@
                 "fields": [
                   {
                     "label": "Transparante achtergrond",
-                    "description": "Schakel het selectievakje uit om een achtergrondkleur of afbeelding te kiezen."
+                    "description": "Uitvinken om een achtergrondkleur of afbeelding te kiezen"
                   },
                   {
                     "label": "Achtergrondkleur",
-                    "description": "Optioneel, dit kan worden ingesteld om een achtergrondkleur voor deze stap te krijgen",
+                    "description": "Optioneel, kan worden ingesteld om een achtergrondkleur voor deze stap te krijgen",
                     "default": "#fff"
                   },
                   {
@@ -65,10 +65,10 @@
                 "label": "Volgorde",
                 "fields": [
                   {
-                    "label": "Neem een stap op in de route"
+                    "label": "Integreer stap in pad"
                   },
                   {
-                    "label": "Index in de route"
+                    "label": "Index in pad"
                   },
                   {
                     "label": "Een door de gebruiker gedefinieerde naam"
@@ -82,20 +82,20 @@
           "label": "Perspectiefverhouding"
         },
         {
-          "label": "Route"
+          "label": "Route voor het pad"
         }
       ]
     },
     {
-      "label": "Readspeaker",
+      "label": "Schermlezer",
       "fields": [
         {
-          "label": "Previous slide",
-          "default": "Previous slide"
+          "label": "Vorige dia",
+          "default": "Vorige dia"
         },
         {
-          "label": "Next slide",
-          "default": "Next slide"
+          "label": "Volgende dia",
+          "default": "Volgende dia"
         }
       ]
     }
