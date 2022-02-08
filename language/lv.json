@@ -1,0 +1,103 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Izveidot skatus",
+          "description": "Šeit variet izveidot skatus ar dažādām pārejām un tekstu.",
+          "entity": "izvēle",
+          "field": {
+            "label": "Skatīt gadījumu",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "centrēt tekstu"
+                  },
+                  {
+                    "label": "X pozīcija"
+                  },
+                  {
+                    "label": "Y pozīcija"
+                  },
+                  {
+                    "label": "Z pozīcija",
+                    "description": "Negatīvās vērtības atrodas tālāk no kameras, bet pozitīvās vērtības ir tuvāk."
+                  },
+                  {
+                    "label": "X rotācija",
+                    "description": "Noklusējuma rotācija ir 0."
+                  },
+                  {
+                    "label": "Y rotācija",
+                    "description": "Noklusējuma rotācija ir 0."
+                  },
+                  {
+                    "label": "Z rotācija",
+                    "description": "Noklusējuma rotācija ir 0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Caurspīdīgs fons",
+                    "description": "Noņemiet atzīmi, lai izvēlētos fona krāsu vai attēlu"
+                  },
+                  {
+                    "label": "Fona krāsa",
+                    "description": "Neobligāts, var iestatīt, lai šim solim būtu fona krāsa",
+                    "default": "#fff"
+                  },
+                  {
+                    "label": "Fona attēls"
+                  },
+                  {
+                    "label": "Fona platums"
+                  },
+                  {
+                    "label": "Fona augstums"
+                  }
+                ]
+              },
+              {
+                "label": "Kārtošana",
+                "fields": [
+                  {
+                    "label": "Iekļaut soli ceļā"
+                  },
+                  {
+                    "label": "Indekss ceļā"
+                  },
+                  {
+                    "label": "Lietotāja definēts nosaukums"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Perspektīvas attiecība"
+        },
+        {
+          "label": "Maršruta ceļš"
+        }
+      ]
+    },
+    {
+      "label": "Ekrāna lasītājs",
+      "fields": [
+        {
+          "label": "Iepriekšējais slaids",
+          "default": "Iepriekšējais slaids"
+        },
+        {
+          "label": "Nākamais slaids",
+          "default": "Nākamais slaids"
+        }
+      ]
+    }
+  ]
+}
