@@ -1,0 +1,103 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Crear vistas",
+          "description": "Aquí podes crear vistas con diferentes transicións e texto.",
+          "entity": "opción",
+          "field": {
+            "label": "Ver elemento",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "centrar texto"
+                  },
+                  {
+                    "label": "posición X"
+                  },
+                  {
+                    "label": "posición Y"
+                  },
+                  {
+                    "label": "Posición Z",
+                    "description": "Os valores negativos están máis lonxe da cámara e os positivos máis preto."
+                  },
+                  {
+                    "label": "Rotación X",
+                    "description": "A rotación por defecto é 0."
+                  },
+                  {
+                    "label": "Rotación Y",
+                    "description": "A rotación por defecto é0."
+                  },
+                  {
+                    "label": "Rotación Z",
+                    "description": "A rotación por defecto é0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Fondo transparente",
+                    "description": "Desmarca para escoller cor de fondo ou imaxe"
+                  },
+                  {
+                    "label": "Cor de fondo",
+                    "description": "Opcional. Pódese activar para ter unha cor de fondo para este paso",
+                    "default": "#fff"
+                  },
+                  {
+                    "label": "Imaxe de fondo"
+                  },
+                  {
+                    "label": "Anchura do fondo"
+                  },
+                  {
+                    "label": "Altura do fondo"
+                  }
+                ]
+              },
+              {
+                "label": "Ordenación",
+                "fields": [
+                  {
+                    "label": "Incluir paso na ruta"
+                  },
+                  {
+                    "label": "Indice na ruta"
+                  },
+                  {
+                    "label": "Nome definido polo usuario"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Proporción  da perspectiva"
+        },
+        {
+          "label": "Localización da ruta"
+        }
+      ]
+    },
+    {
+      "label": "Lector de pantalla",
+      "fields": [
+        {
+          "label": "Diapositiva anterior",
+          "default": "Diapositiva anterior"
+        },
+        {
+          "label": "Diapositiva seguinte",
+          "default": "Diapositiva seguinte"
+        }
+      ]
+    }
+  ]
+}
