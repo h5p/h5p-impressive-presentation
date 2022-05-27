@@ -3,9 +3,9 @@
     {
       "fields": [
         {
-          "label": "Criar visões",
-          "description": "Aqui você pode criar visões com diferentes transições e textos.",
-          "entity": "option",
+          "label": "Criar vistas",
+          "description": "Aqui pode criar vistas com diferentes transições e textos.",
+          "entity": "opção",
           "field": {
             "label": "Ver instância",
             "fields": [
@@ -13,7 +13,7 @@
               {
                 "fields": [
                   {
-                    "label": "Centralizar texto"
+                    "label": "centrar texto"
                   },
                   {
                     "label": "Posição em X"
@@ -23,7 +23,7 @@
                   },
                   {
                     "label": "Posição em Z",
-                    "description": "Valores negativos estão mais longe da câmera e valores positivos estão mais perto."
+                    "description": "Valores negativos estão mais longe da câmara e valores positivos estão mais perto."
                   },
                   {
                     "label": "Rotação em X",
@@ -43,11 +43,11 @@
                 "fields": [
                   {
                     "label": "Fundo transparente",
-                    "description": "Desmarque se desenha escolher uma cor ou uma imagem de fundo"
+                    "description": "Desmarque se pretende escolher uma cor ou uma imagem de fundo"
                   },
                   {
-                    "label": "Cor do plano de fundo",
-                    "description": "Opcional, pode ser definido para adicionar uma cor ao fundo nesta etapa",
+                    "label": "Cor do fundo",
+                    "description": "Opcional, pode ser definido para adicionar uma cor ao fundo desta etapa",
                     "default": "#fff"
                   },
                   {
@@ -71,7 +71,7 @@
                     "label": "Índice no trajeto"
                   },
                   {
-                    "label": "Nome definido pelo usuário"
+                    "label": "Nome definido pelo utilizador"
                   }
                 ]
               }
@@ -79,23 +79,23 @@
           }
         },
         {
-          "label": "Proporção de perspectiva"
+          "label": "Proporção da perspectiva"
         },
         {
-          "label": "Trajeto de rota"
+          "label": "Trajeto da rota"
         }
       ]
     },
     {
-      "label": "Readspeaker",
+      "label": "Leitor de ecrã",
       "fields": [
         {
-          "label": "Previous slide",
-          "default": "Previous slide"
+          "label": "Slide anterior",
+          "default": "Slide anterior"
         },
         {
-          "label": "Next slide",
-          "default": "Next slide"
+          "label": "Próximo slide",
+          "default": "Próximo slide"
         }
       ]
     }
