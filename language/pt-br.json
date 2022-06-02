@@ -5,7 +5,7 @@
         {
           "label": "Criar visões",
           "description": "Aqui você pode criar visões com diferentes transições e textos.",
-          "entity": "option",
+          "entity": "opção",
           "field": {
             "label": "Ver instância",
             "fields": [
@@ -16,25 +16,25 @@
                     "label": "Centralizar texto"
                   },
                   {
-                    "label": "Posição em X"
+                    "label": "Posição X"
                   },
                   {
-                    "label": "Posição em Y"
+                    "label": "Posição Y"
                   },
                   {
-                    "label": "Posição em Z",
+                    "label": "Posição Z",
                     "description": "Valores negativos estão mais longe da câmera e valores positivos estão mais perto."
                   },
                   {
-                    "label": "Rotação em X",
+                    "label": "Rotação X",
                     "description": "Rotação padrão é 0."
                   },
                   {
-                    "label": "Rotação em Y",
+                    "label": "Rotação Y",
                     "description": "Rotação padrão é 0."
                   },
                   {
-                    "label": "Rotação em Z",
+                    "label": "Rotação Z",
                     "description": "Rotação padrão é 0."
                   }
                 ]
@@ -43,7 +43,7 @@
                 "fields": [
                   {
                     "label": "Fundo transparente",
-                    "description": "Desmarque se desenha escolher uma cor ou uma imagem de fundo"
+                    "description": "Desmarcar para escolher a cor ou imagem de fundo"
                   },
                   {
                     "label": "Cor do plano de fundo",
@@ -87,15 +87,15 @@
       ]
     },
     {
-      "label": "Readspeaker",
+      "label": "Leitor de Tela",
       "fields": [
         {
-          "label": "Previous slide",
-          "default": "Previous slide"
+          "label": "Slide anterior",
+          "default": "Slide anterior"
         },
         {
-          "label": "Next slide",
-          "default": "Next slide"
+          "label": "Próximo slide",
+          "default": "Próximo slide"
         }
       ]
     }
