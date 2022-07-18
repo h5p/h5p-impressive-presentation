@@ -4,7 +4,7 @@
       "fields": [
         {
           "label": "Crear vistas",
-          "description": "Aquí usted puede crear vistas con diferentes transiciones y texto.",
+          "description": "Aquí puedes crear vistas con diferentes transiciones y texto.",
           "entity": "opción",
           "field": {
             "label": "Ver instancia",
@@ -43,7 +43,7 @@
                 "fields": [
                   {
                     "label": "Fondo Transparente",
-                    "description": "Fondo Transparente"
+                    "description": "Desmarca para elegir el color o la imagen de fondo"
                   },
                   {
                     "label": "Color del fondo",
@@ -62,10 +62,10 @@
                 ]
               },
               {
-                "label": "Ordenamiento",
+                "label": "Orden",
                 "fields": [
                   {
-                    "label": "Incluir paso en ruta"
+                    "label": "Incluir paso en la ruta"
                   },
                   {
                     "label": "Índice en ruta"
@@ -82,20 +82,20 @@
           "label": "Proporción de aspecto de perspectiva"
         },
         {
-          "label": "Ruta de ruta"
+          "label": "Localización de la ruta"
         }
       ]
     },
     {
-      "label": "Lector de texto en voz alta",
+      "label": "Lector de pantalla",
       "fields": [
         {
-          "label": "Página anterior",
-          "default": "Página anterior"
+          "label": "Diapositiva anterior",
+          "default": "Diapositiva anterior"
         },
         {
-          "label": "Página siguiente",
-          "default": "Página siguiente"
+          "label": "Diapositiva siguiente",
+          "default": "Diapositiva siguiente"
         }
       ]
     }
