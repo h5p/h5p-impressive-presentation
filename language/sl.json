@@ -1,0 +1,103 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Ustvari poglede",
+          "description": "Omogoča ustvarjanje pogledov z različnimi prehodi in besedilom",
+          "entity": "možnost",
+          "field": {
+            "label": "Ogled primera",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "osrednje besedilo"
+                  },
+                  {
+                    "label": "položaj X"
+                  },
+                  {
+                    "label": "položaj Y"
+                  },
+                  {
+                    "label": "položaj Z",
+                    "description": "Negativne vrednosti so bolj oddaljene od kamere, medtem ko so pozitivne bližje."
+                  },
+                  {
+                    "label": "rotacija X",
+                    "description": "Privzeta vrednost rotacije je 0."
+                  },
+                  {
+                    "label": "rotacija Y",
+                    "description": "Privzeta vrednost rotacije je 0."
+                  },
+                  {
+                    "label": "rotacija Z",
+                    "description": "Privzeta vrednost rotacije je 0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Prosojno ozadje",
+                    "description": "Za izbiro barve ozadja ali vključitev slike je treba možnost onemogočiti."
+                  },
+                  {
+                    "label": "Barva ozadja",
+                    "description": "Neobvezna izbira barvne sheme ozadja za korak.",
+                    "default": "#fff"
+                  },
+                  {
+                    "label": "Slika za ozadje"
+                  },
+                  {
+                    "label": "Širina ozadja"
+                  },
+                  {
+                    "label": "Višina ozadja"
+                  }
+                ]
+              },
+              {
+                "label": "Razvrščanje",
+                "fields": [
+                  {
+                    "label": "Dodaj korak na pot"
+                  },
+                  {
+                    "label": "Indeks na poti"
+                  },
+                  {
+                    "label": "Uporabniško določeno ime"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Perspektiva razmerja"
+        },
+        {
+          "label": "Potek poti"
+        }
+      ]
+    },
+    {
+      "label": "Bralnik zaslona",
+      "fields": [
+        {
+          "label": "Prejšnja stran",
+          "default": "Prejšnja stran"
+        },
+        {
+          "label": "Naslednja stran",
+          "default": "Naslednja stran"
+        }
+      ]
+    }
+  ]
+}
