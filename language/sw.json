@@ -1,0 +1,103 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Unda maoni",
+          "description": "Hapa unaweza kuunda maoni yenye mabadiliko na maandishi tofauti.",
+          "entity": "chaguo",
+          "field": {
+            "label": "Angalia mfano",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "maandishi ya katikati"
+                  },
+                  {
+                    "label": "Nafasi ya X"
+                  },
+                  {
+                    "label": "Nafasi ya Y"
+                  },
+                  {
+                    "label": "Nafasi ya Z",
+                    "description": "Thamani hasi ziko mbali na kamera na thamani chanya ziko karibu zaidi."
+                  },
+                  {
+                    "label": "Mzunguko wa X",
+                    "description": "Mzunguko chaguo-msingi ni 0."
+                  },
+                  {
+                    "label": "Mzunguko wa Y",
+                    "description": "Mzunguko chaguo-msingi ni 0."
+                  },
+                  {
+                    "label": "Mzunguko wa Z",
+                    "description": "Mzunguko chaguo-msingi ni 0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Mandharinyuma yenye uwazi",
+                    "description": "Ondoa uteuzi ili kuchagua rangi au picha ya mandharinyuma"
+                  },
+                  {
+                    "label": "Rangi ya Mandharinyuma",
+                    "description": "Inaweza kuwekwa kama rangi ya mandharinyuma kwa hatua hii kwa hiari",
+                    "default": "#fff"
+                  },
+                  {
+                    "label": "Picha ya mandharinyuma"
+                  },
+                  {
+                    "label": "Upana wa mandharinyuma"
+                  },
+                  {
+                    "label": "Urefu wa mandharinyuma"
+                  }
+                ]
+              },
+              {
+                "label": "Kuagiza",
+                "fields": [
+                  {
+                    "label": "Jumuisha hatua kwenye njia"
+                  },
+                  {
+                    "label": "Kielezo katika njia"
+                  },
+                  {
+                    "label": "Jina la mtumiaji lililofafanuliwa"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Uwiano wa mtazamo"
+        },
+        {
+          "label": "Mwelekeo njia"
+        }
+      ]
+    },
+    {
+      "label": "Kisoma maandishi",
+      "fields": [
+        {
+          "label": "Slaidi iliyotangulia",
+          "default": "Slaidi iliyotangulia"
+        },
+        {
+          "label": "Slaidi inayofuata",
+          "default": "Slaidi inayofuata"
+        }
+      ]
+    }
+  ]
+}
