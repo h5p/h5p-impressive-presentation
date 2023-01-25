@@ -1,0 +1,103 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Créer des vues",
+          "description": "Ici vous pouvez créer des vues avec différentes transitions et textes.",
+          "entity": "option",
+          "field": {
+            "label": "Voir l’exemple",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "texte au centre"
+                  },
+                  {
+                    "label": "Position X"
+                  },
+                  {
+                    "label": "Position Y"
+                  },
+                  {
+                    "label": "Position Z",
+                    "description": "Les valeurs négatives sont plus éloignées de la caméra et les valeurs positives sont plus proches."
+                  },
+                  {
+                    "label": "Rotation X",
+                    "description": "La rotation par défaut est 0."
+                  },
+                  {
+                    "label": "Rotation Y",
+                    "description": "La rotation par défaut est 0."
+                  },
+                  {
+                    "label": "Rotation Z",
+                    "description": "La rotation par défaut est 0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Fond transparent",
+                    "description": "Désélectionner pour choisir la couleur de fond ou l’image"
+                  },
+                  {
+                    "label": "Couleur de fond",
+                    "description": "Facultatif, peut être configuré pour avoir une couleur de fond pour cette étape",
+                    "default": "#fff"
+                  },
+                  {
+                    "label": "Image de fond"
+                  },
+                  {
+                    "label": "Largeur du fond"
+                  },
+                  {
+                    "label": "Hauteur du fond"
+                  }
+                ]
+              },
+              {
+                "label": "Commander",
+                "fields": [
+                  {
+                    "label": "Inclure l'étape dans le parcours"
+                  },
+                  {
+                    "label": "Index dans le parcours"
+                  },
+                  {
+                    "label": "Nom défini de l’utilisateur"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Ratio de perspective"
+        },
+        {
+          "label": "Itinéraire"
+        }
+      ]
+    },
+    {
+      "label": "ReadSpeaker",
+      "fields": [
+        {
+          "label": "Diapositive précédente",
+          "default": "Diapositive précédente"
+        },
+        {
+          "label": "Diapositive suivante",
+          "default": "Diapositive suivante"
+        }
+      ]
+    }
+  ]
+}

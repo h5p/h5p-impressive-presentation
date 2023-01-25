@@ -1,0 +1,103 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Kurti rodinius",
+          "description": "Čia galite kurti rodinius su skirtingais perėjimais ir tekstu.",
+          "entity": "parinktis",
+          "field": {
+            "label": "Peržiūrėti egzempliorių",
+            "fields": [
+              {},
+              {
+                "fields": [
+                  {
+                    "label": "centruoti tekstą"
+                  },
+                  {
+                    "label": "X padėtis"
+                  },
+                  {
+                    "label": "Y padėtis"
+                  },
+                  {
+                    "label": "Z padėtis",
+                    "description": "Neigiamos reikšmės yra toliau nuo kameros, o teigiamos – arčiau."
+                  },
+                  {
+                    "label": "X pasukimas",
+                    "description": "Numatytasis pasukimas yra 0."
+                  },
+                  {
+                    "label": "Y pasukimas",
+                    "description": "Numatytasis pasukimas yra 0."
+                  },
+                  {
+                    "label": "Z pasukimas",
+                    "description": "Numatytasis pasukimas yra 0."
+                  }
+                ]
+              },
+              {
+                "fields": [
+                  {
+                    "label": "Skaidrus fonas",
+                    "description": "Uncheck to choose background color or image"
+                  },
+                  {
+                    "label": "Fono spalva",
+                    "description": "Pasirenkama, galima nustatyti šio žingsnio fono spalvą",
+                    "default": "#fff"
+                  },
+                  {
+                    "label": "Fono paveikslėlis"
+                  },
+                  {
+                    "label": "Fono plotis"
+                  },
+                  {
+                    "label": "Fono aukštis"
+                  }
+                ]
+              },
+              {
+                "label": "Rikiavimas",
+                "fields": [
+                  {
+                    "label": "Include step in path"
+                  },
+                  {
+                    "label": "Index in path"
+                  },
+                  {
+                    "label": "User defined name"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Perspective ratio"
+        },
+        {
+          "label": "Route path"
+        }
+      ]
+    },
+    {
+      "label": "Readspeaker",
+      "fields": [
+        {
+          "label": "Ankstesnė skaidrė",
+          "default": "Ankstesnė skaidrė"
+        },
+        {
+          "label": "Kita skaidrė",
+          "default": "Kita skaidrė"
+        }
+      ]
+    }
+  ]
+}
