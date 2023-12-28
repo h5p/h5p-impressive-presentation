@@ -43,7 +43,7 @@
                 "fields": [
                   {
                     "label": "Skaidrus fonas",
-                    "description": "Uncheck to choose background color or image"
+                    "description": "Nuimkite žymėjimą, jei norite pasirinkti fono spalvą arba paveikslėlį"
                   },
                   {
                     "label": "Fono spalva",
@@ -65,13 +65,13 @@
                 "label": "Rikiavimas",
                 "fields": [
                   {
-                    "label": "Include step in path"
+                    "label": "Įtraukti žingsnį į kelią"
                   },
                   {
                     "label": "Index in path"
                   },
                   {
-                    "label": "User defined name"
+                    "label": "Naudotojo nustatytas pavadinimas"
                   }
                 ]
               }
